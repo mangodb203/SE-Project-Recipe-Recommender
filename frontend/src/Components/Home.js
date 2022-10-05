@@ -6,6 +6,9 @@ import American from '../imgs/American.jpg'
 import Mexican from '../imgs/Mexican.jpg'
 import Indian from '../imgs/Indian.jpg'
 import Japanese from '../imgs/Japanese.jpg'
+import Gluten from '../imgs/gluten.jpg'
+import Dairy from '../imgs/dairy.jpg'
+import Sugar from '../imgs/sugar.jpg'
 import './cards.css';
 import {
     Button
@@ -16,6 +19,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useState, useRef } from "react";
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
 const Home = () => {
     const [italianSelected, setItalianSelected] = useState(false);
     const [americanSelected, setAmericanSelected] = useState(false);
@@ -23,11 +28,17 @@ const Home = () => {
     const [indianSelected, setIndianSelected] = useState(false);
     const [chineseSelected, setChineseSelected] = useState(false);
     const [japaneseSelected, setJapaneseSelected] = useState(false);
+    const [glutenSelected, setGlutenSelected] = useState(false);
+    const [dairySelected, setDairySelected] = useState(false);
+    const [sugarSelected, setSugarSelected] = useState(false);
     const ref = useRef(null);
+    const dietRef = useRef(null);
     const getStarted = () => {
         ref.current?.scrollIntoView({ behavior: 'smooth' });
     };
-    
+    const goToDieterary = () => {
+        dietRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
     return (
         <div>
             <div style={{
@@ -134,6 +145,24 @@ const Home = () => {
                             </Typography>
                         </CardContent>
                     </Card>
+                </div>
+                <div style={{
+                    display: "flex",
+                    justifyContent: "center",
+                }}><Button className="button-style" onClick={goToDieterary}>Next</Button>
+                </div>
+                <div style={{ margin: "120px auto" }} ref={dietRef}>
+
+
+                    <Typography variant="h3" component="h5" style={{ textAlign: "center" }}>
+                        Do you have any dietary restrictions?
+                    </Typography>
+                    <Stack direction="row" spacing={10} style={{ justifyContent: "center", marginTop: "50px" }}>
+                        <Avatar className={"card " + glutenSelected} onClick={() => setGlutenSelected(!glutenSelected)} alt="Gluten Free" src={Gluten} sx={{ width: 250, height: 250 }} />
+                        <Avatar className={"card " + dairySelected} onClick={() => setDairySelected(!dairySelected)} alt="Dairy Free" src={Dairy} sx={{ width: 250, height: 250 }} />
+                        <Avatar className={"card " + sugarSelected} onClick={() => setSugarSelected(!sugarSelected)} alt="sugar" src={Sugar} sx={{ width: 250, height: 250 }} />
+                    </Stack>
+
                 </div>
             </div>
         </div>
