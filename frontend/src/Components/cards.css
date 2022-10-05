@@ -1,0 +1,16 @@
+.card:hover{
+    cursor: pointer;
+}
+
+.true{
+    opacity: 0.7;
+}
+.button-style{
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    background: #022950;
+    border-radius: 30px;
+    color: white;
+    margin-bottom: 100px
+}
