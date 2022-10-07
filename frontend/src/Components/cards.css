@@ -6,7 +6,7 @@
     box-shadow: #022950;
     border: 2px solid #022950;
     border-radius: 10px !important;
-    width: 90%;
+    width: 98%;
     justify-content: center;
     margin: 20px auto
 }
@@ -21,4 +21,19 @@
     border-radius: 30px !important;
     color: white !important;
     margin-bottom: 100px !important
+}
+
+.cartButton{
+    position: absolute !important;
+    height: relative;
+    width: relative;
+    background: #022950 !important;
+    border-radius: 30px !important;
+    color: white !important;
+    margin-bottom: 100px !important
+}
+.cart{
+    position: absolute;
+    margin-right: 10%;
+    right: 10px;
 }
