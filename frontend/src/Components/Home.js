@@ -14,12 +14,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
-    const ref = useRef(null);
-    const getStarted = () => {
-        ref.current?.scrollIntoView({ behavior: 'smooth' });
-    };
+    const navigate = useNavigate();
     const landingInfo = [{ name: "Healthy", image: salad }, { name: "Fancy meals", image: Chinese }, { name: "Quick Bites", image: Mexican }, { name: "Breakfast", image: breakfast }, { name: "Desserts", image: brownies }];
     return (
         <div>
@@ -41,11 +39,11 @@ const Home = () => {
                     fontFamily: "Times New Roman, Times, serif",
                     marginBottom: "25px"
                 }}>Get recommendations for your favorite dishes</div>
-                <Button className='button-style' onClick={getStarted}>Get Started</Button>
+                <Button className='button-style' onClick={()=>navigate('/recipes')}>Get Started</Button>
 
             </div>
 
-            <div ref={ref} style={{ margin: "50px auto", flexDirection: "column", overflow: "hidden" }} >
+            <div  style={{ margin: "50px auto", flexDirection: "column", overflow: "hidden" }} >
                 <Typography variant="h3" component="h5" style={{ textAlign: "center" }}>
                     What we offer
                 </Typography>
