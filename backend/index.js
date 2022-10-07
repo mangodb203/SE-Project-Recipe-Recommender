@@ -3,9 +3,23 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+const authRoutes = require("./routes/auth");
+
 //Middlewares
 app.use(express.json());
 app.use(cors());
+
+// Routes
+app.use("/auth", authRoutes);
+
+// Custom Middlewares - Error handling
+app.use((err, req, res, next) => {
+  if (err.name === "UnauthorizedError") {
+    res.status(err.status).send({ error: err.message });
+    return;
+  }
+  next();
+});
 
 //DB connections
 mongoose.connect(process.env.DATABASE).then(() => {
