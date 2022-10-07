@@ -16,8 +16,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { useNavigate } from "react-router-dom";
 
 const Recipes = () => {
+    const navigate = useNavigate();
     const arrayChunk = (arr, n) => {
         console.log("array: ", arr)
         const array = arr.slice();
@@ -38,6 +40,12 @@ const Recipes = () => {
         { name: "Thai Curry", image: curry, code: "awesome thai chicken coconut curry" },
         { name: "Chinese Fried Rice", image: rice, code: "anytime easy egg fried rice" },
         { name: "Vegetable Soup", image: soup, code: "a to z vegetable soup" }];
+    
+    const getRecipeRecommendations = (recipe) =>{
+        console.log(recipe)
+        //API call
+        navigate("/recommendations")
+    }
     return (
         <div>
             <div style={{ margin: "50px auto", flexDirection: "column", overflow: "hidden" }} >
@@ -52,7 +60,7 @@ const Recipes = () => {
                         <div key={i} className="row mx-auto" style={{ justifyContent: "center" }}>
                             {
                                 row.map((col, i) => (
-                                    <Card key={i} sx={{ width: "25%", maxHeight: 225 }} style={{ float: "left", margin: "20px 4%", fontSize: "12px" }} >
+                                    <Card onClick={() => getRecipeRecommendations(recipes[i].code)} className="card" key={i} sx={{ width: "25%", maxHeight: 225 }} style={{ float: "left", margin: "20px 4%", fontSize: "12px" }} >
                                         <CardMedia
                                             component="img"
                                             height="180"
