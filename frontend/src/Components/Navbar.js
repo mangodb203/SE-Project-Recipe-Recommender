@@ -7,7 +7,6 @@ import {
     Typography,
 } from "@mui/material";
 
-
 const NavBar = () => {
     return (
         <div>
