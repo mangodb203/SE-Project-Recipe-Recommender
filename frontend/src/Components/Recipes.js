@@ -28,18 +28,18 @@ const Recipes = () => {
         return chunks;
     };
     const recipes = [
-        { name: "Chopsuey", image: chopsuey, code: "chinese  chop suey" },
-        { name: "Grilled Burger", image: burger, code: "awesome stuffed grilled burgers   easy" },
-        { name: "Brownies", image: brownies, code: "fabulous  brownies" },
-        { name: "Salmon Sushi", image: sushi, code: "salmon sushi" },
-        { name: "Mocktail", image: mocktail, code: "cranberry cream mocktail" },
-        { name: "Pizza", image: pizza, code: "amazing thin crust pizza" },
-        { name: "Chicken Salad", image: salad },
-        { name: "Butter Chicken", image: butterChicken, code: "authentic butter chicken" },
-        { name: "Chocolate Chip Cookies", image: cookies, code: "best ever chocolate chip cookies" },
-        { name: "Thai Curry", image: curry, code: "awesome thai chicken coconut curry" },
-        { name: "Chinese Fried Rice", image: rice, code: "anytime easy egg fried rice" },
-        { name: "Vegetable Soup", image: soup, code: "a to z vegetable soup" }];
+        { name: "Chopsuey", image: chopsuey, code: "8559" },
+        { name: "Grilled Burger", image: burger, code: "322548" },
+        { name: "Brownies", image: brownies, code: "371961" },
+        { name: "Salmon Sushi", image: sushi, code: "337652" },
+        { name: "Mocktail", image: mocktail, code: "460104" },
+        { name: "Pizza", image: pizza, code: "123710" },
+        { name: "Chicken Salad", image: salad, code: "345123" },
+        { name: "Butter Chicken", image: butterChicken, code: "227557" },
+        { name: "Chocolate Chip Cookies", image: cookies, code: "10117" },
+        { name: "Thai Curry", image: curry, code: "81916" },
+        { name: "Chinese Fried Rice", image: rice, code: "24774" },
+        { name: "Vegetable Soup", image: soup, code: "103153" }];
     
     const getRecipeRecommendations = (recipe) =>{
         console.log(recipe)
