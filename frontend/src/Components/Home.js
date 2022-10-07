@@ -24,13 +24,24 @@ import Stack from '@mui/material/Stack';
 const Home = () => {
     const [italianSelected, setItalianSelected] = useState(false);
     const [americanSelected, setAmericanSelected] = useState(false);
-    const [mexicanSelected, setmexicanSelected] = useState(false);
+    const [mexicanSelected, setMexicanSelected] = useState(false);
     const [indianSelected, setIndianSelected] = useState(false);
     const [chineseSelected, setChineseSelected] = useState(false);
     const [japaneseSelected, setJapaneseSelected] = useState(false);
     const [glutenSelected, setGlutenSelected] = useState(false);
     const [dairySelected, setDairySelected] = useState(false);
     const [sugarSelected, setSugarSelected] = useState(false);
+    const [cuisines, setCuisine] = useState([]);
+    const addCuisine = (cuisine) =>{
+        if(cuisines.indexOf(cuisine) === -1){
+            setCuisine(oldArray => [...oldArray, cuisine])
+            
+            }
+        else {
+            setCuisine(current => current.filter(element => {return element !== cuisine}))
+        }
+    }
+    console.log(cuisines)
     const ref = useRef(null);
     const dietRef = useRef(null);
     const getStarted = () => {
@@ -67,7 +78,7 @@ const Home = () => {
                     <Typography variant="h3" component="h5" style={{ textAlign: "center" }}>
                         What Cuisines do you Like?
                     </Typography>
-                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + italianSelected} onClick={() => setItalianSelected(!italianSelected)}>
+                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + italianSelected} onClick={() => {setItalianSelected(!italianSelected);addCuisine("italian")}}>
                         <CardMedia
                             component="img"
                             height="250"
@@ -80,7 +91,7 @@ const Home = () => {
                             </Typography>
                         </CardContent>
                     </Card>
-                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + chineseSelected} onClick={() => setChineseSelected(!chineseSelected)}>
+                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + chineseSelected} onClick={() => {setChineseSelected(!chineseSelected);addCuisine("chinese");}}>
                         <CardMedia
                             component="img"
                             height="250"
@@ -93,7 +104,7 @@ const Home = () => {
                             </Typography>
                         </CardContent>
                     </Card>
-                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + americanSelected} onClick={() => setAmericanSelected(!americanSelected)}>
+                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + americanSelected} onClick={() => {setAmericanSelected(!americanSelected);addCuisine("american");}}>
                         <CardMedia
                             component="img"
                             height="250"
@@ -106,7 +117,7 @@ const Home = () => {
                             </Typography>
                         </CardContent>
                     </Card>
-                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + mexicanSelected} onClick={() => setmexicanSelected(!mexicanSelected)}>
+                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + mexicanSelected} onClick={() => {setMexicanSelected(!mexicanSelected);addCuisine("mexican");}}>
                         <CardMedia
                             component="img"
                             height="250"
@@ -119,7 +130,7 @@ const Home = () => {
                             </Typography>
                         </CardContent>
                     </Card>
-                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + indianSelected} onClick={() => setIndianSelected(!indianSelected)}>
+                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + indianSelected} onClick={() => {setIndianSelected(!indianSelected);addCuisine("indian");}}>
                         <CardMedia
                             component="img"
                             height="250"
@@ -132,7 +143,7 @@ const Home = () => {
                             </Typography>
                         </CardContent>
                     </Card>
-                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + japaneseSelected} onClick={() => setJapaneseSelected(!japaneseSelected)}>
+                    <Card sx={{ maxWidth: 345 }} style={{ float: "left", margin: "20px 40px" }} className={"card " + japaneseSelected} onClick={() => {setJapaneseSelected(!japaneseSelected);addCuisine("japanese");}}>
                         <CardMedia
                             component="img"
                             height="250"
@@ -145,6 +156,7 @@ const Home = () => {
                             </Typography>
                         </CardContent>
                     </Card>
+                    
                 </div>
                 <div style={{
                     display: "flex",
