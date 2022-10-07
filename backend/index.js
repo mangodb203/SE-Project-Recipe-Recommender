@@ -1,13 +1,21 @@
+const mongoose = require("mongoose");
 const express = require("express");
-
-const PORT = process.env.PORT || 3001;
-
+const cors = require("cors");
 const app = express();
 
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello from server!" });
-  });
+//Middlewares
+app.use(express.json());
+app.use(cors());
 
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
+//DB connections
+mongoose.connect(process.env.DATABASE).then(() => {
+  console.log("DB CONNECTED!!");
+});
+
+// PORT
+const port = process.env.PORT || 5000;
+
+//Start server
+app.listen(port, () => {
+  console.log(`app is running on port ${port}...`);
 });
