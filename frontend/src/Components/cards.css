@@ -2,7 +2,14 @@
     cursor: pointer;
     background: #daedff
 }
-
+.card-style{
+    box-shadow: #022950;
+    border: 2px solid #022950;
+    border-radius: 10px !important;
+    width: 90%;
+    justify-content: center;
+    margin: 20px auto
+}
 .true{
     opacity: 0.7;
 }
