@@ -3,6 +3,8 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import Recipes from "./Components/Recipes";
 import RecipeRecommendations from "./Components/RecipeRecommendations";
 import NavBar from "./Components/Navbar";
+import Order from "./Components/Order";
+
 function App() {
   return (
     <BrowserRouter>
@@ -12,6 +14,7 @@ function App() {
           <Route index element={<LandingPage />} />
           <Route path="recipes" element={<Recipes/>} />
           <Route path="recommendations" element={<RecipeRecommendations/>}/>
+          <Route path="order" element={<Order/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
