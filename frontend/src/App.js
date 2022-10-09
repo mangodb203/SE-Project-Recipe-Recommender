@@ -10,8 +10,7 @@ import Recipes from "./Components/Recipes";
 import RecipeRecommendations from "./Components/RecipeRecommendations";
 import NavBar from "./Components/Navbar";
 import Order from "./Components/Order";
-import { useState } from 'react';
-
+import { useState } from "react";
 
 function App() {
   const [
@@ -43,17 +42,17 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-    <NavBar />
+      <NavBar />
       <Routes>
         <Route path="/">
           <Route index element={<LandingPage />} />
-          <Route path="recipes" element={<Recipes/>} />
+          <Route path="recipes" element={<Recipes />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="forgot-password" element={<ForgotPassword />} />
           <Route path="reset-password/:token" element={<ChangePassword />} />
-          <Route path="recommendations" element={<RecipeRecommendations/>}/>
-          <Route path="order" element={<Order/>}/>
+          <Route path="recommendations" element={<RecipeRecommendations />} />
+          <Route path="order" element={<Order />} />
         </Route>
       </Routes>
     </BrowserRouter>
