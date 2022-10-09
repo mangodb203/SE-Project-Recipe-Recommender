@@ -13,10 +13,6 @@ import Order from "./Components/Order";
 import { useState } from "react";
 
 function App() {
-  const [order, setOrder] = useState([]);
-  const handleOrder = (order) => {
-    setOrder(order);
-  };
   const [
     {
       token,
@@ -50,12 +46,6 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<LandingPage />} />
-          <Route path="recipes" element={<Recipes />} />
-          <Route
-            path="recommendations"
-            element={<RecipeRecommendations handleOrder={handleOrder} />}
-          />
-          <Route path="order" element={<Order order={order} />} />
           <Route path="recipes" element={<Recipes />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
