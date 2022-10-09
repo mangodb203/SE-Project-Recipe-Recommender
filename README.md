@@ -4,6 +4,7 @@
 ![License](https://img.shields.io/github/license/Kaksha/SE-Project-Recipe-Recommender)
 ![Code Size](https://img.shields.io/github/languages/code-size/kaksha/SE-Project-Recipe-Recommender)
 ![Issues](https://img.shields.io/github/issues/Kaksha/SE-Project-Recipe-Recommender)
+![Issues Closed](https://img.shields.io/github/issues-closed/kaksha/SE-Project-Recipe-Recommender)
 ![JS](https://img.shields.io/badge/Javascript--Green)
 ![Python](https://img.shields.io/badge/Python--Green)
 ![HTML](https://img.shields.io/badge/HTML--Green)
