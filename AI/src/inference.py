@@ -16,7 +16,9 @@ def inference(recipe_name):
 
     recommendations = (corr['Correlation']> 0.999000).sort_values(ascending = False).head(10)
 
-    print(recommendations.index.tolist())
+    recommendations = recommendations.index.tolist()
+    print(recommendations)
+    return recommendations
 
 if __name__ == "__main__":
     inference("alouette  potatoes")
