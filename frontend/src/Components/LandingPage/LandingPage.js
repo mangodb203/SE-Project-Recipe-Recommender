@@ -6,6 +6,7 @@ function LandingPage() {
     <div>
       <Home />
     </div>
+    
   );
 }
 
