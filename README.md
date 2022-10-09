@@ -11,4 +11,6 @@
 ![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FKaksha%2FSE-Project-Recipe-Recommender)
 
 
-This project aims at creating a Recipe Recommendation System which allows users to select any dietary restrictions they have, for example gluten-free, dairy-free etc and suggests recipes based on those restrictions.
+This project aims at creating a Recipe Recommendation System which helps users to select their favorite food category and recommends recipes based on it.
+The users are then able to view the recipe and ingredients required, and place an order for those ingredients.
+
