@@ -5,7 +5,7 @@ export const initialState = {
     _id: null,
     managedBy: null,
   },
-  cart: {},
+  cart: [],
 };
 
 function reducer(state, action) {

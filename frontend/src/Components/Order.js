@@ -15,14 +15,14 @@ import Review from './Review';
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
-function getStepContent(step, order) {
+function getStepContent(step) {
   switch (step) {
     case 0:
       return <AddressForm />;
     case 1:
       return <PaymentForm />;
     case 2:
-      return <Review order={order}/>;
+      return <Review/>;
     default:
       throw new Error('Unknown step');
   }
@@ -36,10 +36,9 @@ const theme = createTheme({
   }
 });
 
-export default function Checkout(props) {
+export default function Checkout() {
   
   const [activeStep, setActiveStep] = React.useState(0);
-
   const handleNext = () => {
     setActiveStep(activeStep + 1);
   };
@@ -69,12 +68,12 @@ export default function Checkout(props) {
                   Thank you for your order.
                 </Typography>
                 <Typography variant="subtitle1">
-                  Your order number is #{Math.floor(Math.random()*9000000)}. Hope you have a great day.
+                  Your order number is #35464321. Hope you have a great day.
                 </Typography>
               </React.Fragment>
             ) : (
               <React.Fragment>
-                {getStepContent(activeStep, props.order)}
+                {getStepContent(activeStep)}
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
