@@ -24,7 +24,6 @@
 }
 
 .cartButton{
-    position: absolute !important;
     height: relative;
     width: relative;
     background: #022950 !important;
@@ -34,6 +33,7 @@
 }
 .cart{
     position: absolute;
-    margin-right: 10%;
+    margin-right: 5%;
     right: 10px;
+    display: flex;
 }
