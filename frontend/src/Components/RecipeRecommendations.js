@@ -8,13 +8,12 @@ import { useState } from 'react';
 import "./ToggleSwitch.css";
 
 import { Button } from "@mui/material";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { useNavigate } from "react-router-dom";
 
 
 
 
-const RecipeRecommendations = () => {
+const RecipeRecommendations = ({handleOrder}) => {
 
    const [cart, addItem] = useState([]);
   const handleChange= (e,recipe_name) =>{
@@ -27,11 +26,14 @@ const RecipeRecommendations = () => {
         }
          
         }
-        console.log(cart)
+        
   
 
   const navigate = useNavigate();
-
+    const proceedToOrder = ()=>{
+        handleOrder(cart)
+        navigate('/order')
+    }
     const data =  [{
         recipe_id: "1234",
         name: "creamy barley potatoes",
@@ -119,7 +121,7 @@ const RecipeRecommendations = () => {
         })
     }
     <Box textAlign='center' style={{ paddingLeft:"10px", paddingRight:"215px", paddingTop:"40px" }}>
-    <Button className='button-style' onClick={()=>navigate('/order')}>Proceed</Button>
+    <Button className='button-style' onClick={proceedToOrder}>Proceed</Button>
     </Box>
     </React.Fragment>
 }

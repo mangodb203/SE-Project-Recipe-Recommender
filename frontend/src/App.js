@@ -4,8 +4,14 @@ import Recipes from "./Components/Recipes";
 import RecipeRecommendations from "./Components/RecipeRecommendations";
 import NavBar from "./Components/Navbar";
 import Order from "./Components/Order";
+import { useState } from 'react';
+
 
 function App() {
+  const [order, setOrder] = useState([]);
+  const handleOrder = (order) => {
+    setOrder(order)
+  }
   return (
     <BrowserRouter>
     <NavBar />
@@ -13,8 +19,8 @@ function App() {
         <Route path="/">
           <Route index element={<LandingPage />} />
           <Route path="recipes" element={<Recipes/>} />
-          <Route path="recommendations" element={<RecipeRecommendations/>}/>
-          <Route path="order" element={<Order/>}/>
+          <Route path="recommendations" element={<RecipeRecommendations handleOrder={handleOrder}/>}/>
+          <Route path="order" element={<Order order={order}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
