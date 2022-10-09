@@ -17,6 +17,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from "react-router-dom";
+import { server } from "../utils";
 
 const Recipes = () => {
     const navigate = useNavigate();
@@ -42,8 +43,13 @@ const Recipes = () => {
     
     const getRecipeRecommendations = (recipe) =>{
         console.log(recipe)
-        //API call
-        navigate("/recommendations")
+        server.get('/recipe/all')
+        .then((data) => {
+            console.log("data: ", data )
+            navigate("/recommendations")
+          })
+          .catch((err) => alert(err.response.data.error));
+        
     }
     return (
         <div>
