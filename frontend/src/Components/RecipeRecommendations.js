@@ -6,10 +6,14 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Button } from "@mui/material";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { useNavigate } from "react-router-dom";
+
 
 const addToCart = () => {}
 
 const RecipeRecommendations = () => {
+  const navigate = useNavigate();
+
     const data =  [{
         name: "creamy barley potatoes",
         minutes: 45,
@@ -22,7 +26,8 @@ const RecipeRecommendations = () => {
         steps: ['brown ground beef in large pot', 'add chopped onions to ground beef when almost brown and sautee until wilted', 'add all other ingredients', 'add kidney beans if you like beans in your chili', 'cook in slow cooker on high for 2-3 hours or 6-8 hours on low', 'serve with cold clean lettuce and shredded cheese'],
         ingredients: ['ground beef', 'yellow onions', 'diced tomatoes', 'tomato paste', 'tomato soup', 'rotel tomatoes', 'kidney beans', 'water', 'chili powder', 'ground cumin', 'salt', 'lettuce', 'cheddar cheese'],
       timestamps: true,
-    }]
+    }
+  ]
 
     return <React.Fragment>
        <Typography variant="h4" component="h5" style={{margin : "20px", textAlign: "center"}}>Here are our recommendations:</Typography>
@@ -84,6 +89,9 @@ const RecipeRecommendations = () => {
             </div>);
         })
     }
+    <Box textAlign='center' style={{ paddingLeft:"10px", paddingRight:"215px", paddingTop:"40px" }}>
+    <Button className='button-style' onClick={()=>navigate('/order')}>Proceed</Button>
+    </Box>
     </React.Fragment>
 }
 
