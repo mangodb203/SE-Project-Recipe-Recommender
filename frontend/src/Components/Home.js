@@ -1,4 +1,3 @@
-
 import MainImage from '../imgs/MainImage.jpg';
 import salad from '../imgs/salad.jpg'
 import Chinese from '../imgs/chinese.jpg'
