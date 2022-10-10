@@ -46,14 +46,13 @@ const Recipes = () => {
   ];
 
   const getRecipeRecommendations = (recipe) => {
-    // server.get("/recommend/"+recipe)
-    // .then((data) =>{
-    //     console.log("data", data)
-    //     dispatch({type: 'SET_RECOMMENDATIONS', recommendations: data?.recommendations})
-    //     navigate("/recommendations");
-    // })
-    // .catch((err) => alert(err.response.data.error));
-    navigate("/recommendations");
+    server.get("/recommend/" + recipe)
+    .then((data) =>{
+        console.log("data", data.data.recommendations)
+        dispatch({type: 'SET_RECOMMENDATIONS', recommendations: data.data.recommendations})
+        navigate("/recommendations");
+    })
+    .catch((err) => alert(err.response.data.error));
   };
   return (
     <div>
