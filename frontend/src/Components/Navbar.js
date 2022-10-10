@@ -1,5 +1,4 @@
 import { Restaurant } from "@mui/icons-material";
-
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { useStateValue } from "../StateProvider";
 import CreateIcon from "@mui/icons-material/Create";
@@ -44,6 +43,7 @@ const NavBar = () => {
     <div>
       <AppBar position="sticky" style={{ background: "#022950" }}>
         <Toolbar>
+          <Button style={{textTransform: "capitalize"}} onClick={() => navigate("/")}>
           <IconButton>
             <Restaurant fontSize="large" style={{ color: "white" }} />
           </IconButton>
@@ -56,6 +56,7 @@ const NavBar = () => {
           >
             The CookBook
           </Typography>
+           </Button>
           {menuItems.map(
               (listItem, key) =>
                 listItem.display && (
@@ -97,7 +98,6 @@ const NavBar = () => {
               </ListItem>
             )}
         </Toolbar>
-        
       </AppBar>
     </div>
   );

@@ -6,11 +6,12 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 import "./ToggleSwitch.css";
-
+import { useStateValue } from "../StateProvider";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const RecipeRecommendations = ({ handleOrder }) => {
+  const [, dispatch] = useStateValue();
   const [cart, addItem] = useState([]);
   const handleChange = (e, recipe_name) => {
     if (e.target.checked === true) {
@@ -27,9 +28,9 @@ const RecipeRecommendations = ({ handleOrder }) => {
 
   const navigate = useNavigate();
   const proceedToOrder = () => {
-    handleOrder(cart);
-    navigate("/order");
-  };
+    dispatch({type: "SET_CART", cart })
+    navigate('/order')
+    }
   const data = [
     {
       recipe_id: "1234",
