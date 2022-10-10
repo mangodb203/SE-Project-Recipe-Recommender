@@ -105,7 +105,7 @@ const RecipeRecommendations = () => {
       >
         Here are our recommendations:
       </Typography>
-      {data.map((key) => {
+      {recommendations.map((key) => {
         return (
           <div
             key={key.name}

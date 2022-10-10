@@ -29,7 +29,7 @@ function reducer(state, action) {
     case "SET_RECOMMENDATIONS":
     return {
       ...state,
-      cart: action.recommendations,
+      recommendations: action.recommendations,
     };
     default:
       return state;
