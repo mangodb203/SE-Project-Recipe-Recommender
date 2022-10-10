@@ -14,9 +14,9 @@
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3|Proper punchline for food recommendation 
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|1|
 |Use of version control tools|3|Everything present
-|Use of style checkers |3| [Used Eslint for style checking](https://github.com/Kaksha/SE-Project-Recipe-Recommender/tree/main/frontend)
+|Use of style checkers |3| Style checker added
 |Use of code formatters. |3|[Used prettier for code formatting](https://github.com/Kaksha/SE-Project-Recipe-Recommender/tree/main/frontend)
-|Use of syntax checkers. |3|[Used Eslint for syntax checkers](https://github.com/Kaksha/SE-Project-Recipe-Recommender/tree/main/frontend)
+|Use of syntax checkers. |3| Code checker added
 |Use of code coverage |2|
 |Other automated analysis tools|2|
 |Test cases exist|2|
