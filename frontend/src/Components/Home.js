@@ -12,8 +12,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
 
 const Home = () => {
+    const [{token},dispatch,] = useStateValue();
   const navigate = useNavigate();
   const landingInfo = [
     { name: "Healthy", image: salad },
@@ -47,7 +49,7 @@ const Home = () => {
         >
           Get recommendations for your favorite dishes
         </div>
-        <Button className="button-style" onClick={() => navigate("/recipes")}>
+        <Button className="button-style" onClick={() => {token ? navigate("/recipes") : navigate("/login")}}>
           Get Started
         </Button>
       </div>
