@@ -1,5 +1,5 @@
 # SE-Project-Recipe-Recommender
-[![DOI](https://zenodo.org/badge/545630184.svg)](https://zenodo.org/badge/latestdoi/545630184)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7179508.svg)](https://doi.org/10.5281/zenodo.7179508)
 ![GitHub contributors](https://img.shields.io/github/contributors/Kaksha/SE-Project-Recipe-Recommender)
 ![License](https://img.shields.io/github/license/Kaksha/SE-Project-Recipe-Recommender)
 ![Code Size](https://img.shields.io/github/languages/code-size/kaksha/SE-Project-Recipe-Recommender)
@@ -9,7 +9,9 @@
 ![Python](https://img.shields.io/badge/Python--Green)
 ![HTML](https://img.shields.io/badge/HTML--Green)
 ![CSS](https://img.shields.io/badge/CSS--Green)
+![Repo Size](https://img.shields.io/github/repo-size/Kaksha/SE-Project-Recipe-Recommender)
 ![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FKaksha%2FSE-Project-Recipe-Recommender)
+
 
 
 Recipe Recommendation System helps users to select their favorite food category and recommends recipes based on it. The users are then able to view the recipe and the ingredients required, and place an order for those ingredients.
