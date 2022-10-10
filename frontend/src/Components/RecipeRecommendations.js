@@ -35,67 +35,7 @@ const RecipeRecommendations = () => {
     dispatch({type: "SET_CART", cart })
     navigate('/order')}
     }
-  const data = [
-    {
-      recipe_id: "1234",
-      name: "creamy barley potatoes",
-      minutes: 45,
-      steps: [
-        "brown ground beef in large pot",
-        "add chopped onions to ground beef when almost brown and sautee until wilted",
-        "add all other ingredients",
-        "add kidney beans if you like beans in your chili",
-        "cook in slow cooker on high for 2-3 hours or 6-8 hours on low",
-        "serve with cold clean lettuce and shredded cheese",
-      ],
-      ingredients: [
-        "ground beef",
-        "yellow onions",
-        "diced tomatoes",
-        "tomato paste",
-        "tomato soup",
-        "rotel tomatoes",
-        "kidney beans",
-        "water",
-        "chili powder",
-        "ground cumin",
-        "salt",
-        "lettuce",
-        "cheddar cheese",
-      ],
-      timestamps: true,
-    },
-    {
-      recipe_id: "12345",
-      name: "Bacon potatoes",
-      minutes: 45,
-      steps: [
-        "brown ground beef in large pot",
-        "add chopped onions to ground beef when almost brown and sautee until wilted",
-        "add all other ingredients",
-        "add kidney beans if you like beans in your chili",
-        "cook in slow cooker on high for 2-3 hours or 6-8 hours on low",
-        "serve with cold clean lettuce and shredded cheese",
-      ],
-      ingredients: [
-        "ground beef",
-        "yellow onions",
-        "diced tomatoes",
-        "tomato paste",
-        "tomato soup",
-        "rotel tomatoes",
-        "kidney beans",
-        "water",
-        "chili powder",
-        "ground cumin",
-        "salt",
-        "lettuce",
-        "cheddar cheese",
-      ],
-      timestamps: true,
-    },
-  ];
-
+  
   return (
     <React.Fragment>
       <Typography
@@ -105,7 +45,7 @@ const RecipeRecommendations = () => {
       >
         Here are our recommendations:
       </Typography>
-      {data.map((key) => {
+      {recommendations.map((key) => {
         return (
           <div
             key={key.name}
