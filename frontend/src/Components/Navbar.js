@@ -1,14 +1,11 @@
 import { Restaurant } from "@mui/icons-material";
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, IconButton, Toolbar, Typography, Button,ListItem,
+  ListItemIcon,
+  ListItemText } from "@mui/material";
 import { useStateValue } from "../StateProvider";
 import CreateIcon from "@mui/icons-material/Create";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import { useNavigate } from "react-router-dom";
-import {
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { initialState } from "../reducer";
 
@@ -17,9 +14,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const [
     {
-      token,
-      user: { role },
-      cart,
+      token
     },
     dispatch,
   ] = useStateValue();
@@ -46,7 +41,7 @@ const NavBar = () => {
           <Button style={{textTransform: "capitalize"}} onClick={() => navigate("/")}>
           <IconButton>
             <Restaurant fontSize="large" style={{ color: "white" }} />
-          </IconButton>
+          </IconButton> </Button>
           <Typography
             style={{
               flexGrow: 1,
@@ -56,7 +51,7 @@ const NavBar = () => {
           >
             The CookBook
           </Typography>
-           </Button>
+           
           {menuItems.map(
               (listItem, key) =>
                 listItem.display && (
@@ -64,7 +59,6 @@ const NavBar = () => {
                     button
                     key={key}
                     onClick={() => {
-                      // setOpen(false);
                       navigate(listItem.to);
                       window.scrollTo(0, 0);
                     }}
@@ -80,7 +74,6 @@ const NavBar = () => {
               <ListItem
                 button
                 onClick={() => {
-                  // setOpen(false);
                   localStorage.removeItem("token");
                   localStorage.removeItem("user");
                   dispatch({ type: "SET_TOKEN", token: null });
