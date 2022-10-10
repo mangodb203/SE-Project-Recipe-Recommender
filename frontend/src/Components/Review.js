@@ -8,6 +8,7 @@ import { useStateValue } from "../StateProvider";
 
 export default function Review() {
   const [state, ] = useStateValue();
+  console.log(state)
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -15,8 +16,8 @@ export default function Review() {
       </Typography>
       <List disablePadding>
         {state.cart.map((product) => (
-          <ListItem key={product} sx={{ py: 1, px: 0 }}>
-            <ListItemText primary={product} secondary={product} />
+          <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
+            <ListItemText style={{marginRight:"35px"}}primary={product.name} secondary={product.ingredients.join(", ")} />
             <Typography variant="body2">{12.99}</Typography>
           </ListItem>
         ))}
