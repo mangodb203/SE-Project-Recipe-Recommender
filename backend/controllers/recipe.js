@@ -14,13 +14,27 @@ exports.createRecipe = (req, res) => {
 };
 
 exports.getAllRecipes = (req, res) => {
-  Recipe.find().exec((err, recipes) => {
-    if (err) {
-      return res.status(400).send({ error: err });
-    }
+  Recipe.find()
+    .limit(1000)
+    .exec((err, recipes) => {
+      if (err) {
+        return res.status(400).send({ error: err });
+      }
 
-    res.send(recipes);
-  });
+      res.send(recipes);
+    });
+};
+
+exports.getSomeRecipes = (req, res) => {
+  Recipe.aggregate()
+    .sample(50)
+    .exec((err, recipes) => {
+      if (err) {
+        return res.status(400).send({ error: err });
+      }
+
+      res.send(recipes);
+    });
 };
 
 exports.getRecipe = (req, res) => {
