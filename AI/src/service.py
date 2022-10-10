@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
 from inference import inference
 app = Flask(__name__)
+csrf = CSRFProtect()
+csrf.init_app(app) # Compliant
 
 @app.route('/')
 def hello_world():
