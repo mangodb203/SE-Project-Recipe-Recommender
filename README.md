@@ -1,5 +1,5 @@
 # SE-Project-Recipe-Recommender
-[![DOI](https://zenodo.org/badge/545630184.svg)](https://zenodo.org/badge/latestdoi/545630184)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7179508.svg)](https://doi.org/10.5281/zenodo.7179508)
 ![GitHub contributors](https://img.shields.io/github/contributors/Kaksha/SE-Project-Recipe-Recommender)
 ![License](https://img.shields.io/github/license/Kaksha/SE-Project-Recipe-Recommender)
 ![Code Size](https://img.shields.io/github/languages/code-size/kaksha/SE-Project-Recipe-Recommender)

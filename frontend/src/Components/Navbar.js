@@ -71,7 +71,7 @@ const NavBar = () => {
                 )
             )}
         {token && (
-              <ListItem
+              <ListItem  style = {{width: 'min-content'}}
                 button
                 onClick={() => {
                   localStorage.removeItem("token");
@@ -82,11 +82,11 @@ const NavBar = () => {
                   navigate("/");
                 }}
               >
-                <ListItemIcon>
-                  <ExitToAppIcon />
+                <ListItemIcon style ={{margin:"0 -20px"}}>
+                  <ExitToAppIcon style ={{color:"white"}}/>
                 </ListItemIcon>
                 <ListItemText>
-                  <b>Log out</b>
+                  <b>Logout</b>
                 </ListItemText>
               </ListItem>
             )}
