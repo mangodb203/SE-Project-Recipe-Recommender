@@ -19,8 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test",
-    "lint":"eslint"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
