@@ -9,7 +9,6 @@
 ![Python](https://img.shields.io/badge/Python--Green)
 ![HTML](https://img.shields.io/badge/HTML--Green)
 ![CSS](https://img.shields.io/badge/CSS--Green)
-![Code Size](https://img.shields.io/github/languages/code-size/Kaksha/SE-Project-Recipe-Recommender)
 ![Repo Size](https://img.shields.io/github/repo-size/Kaksha/SE-Project-Recipe-Recommender)
 ![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FKaksha%2FSE-Project-Recipe-Recommender)
 
