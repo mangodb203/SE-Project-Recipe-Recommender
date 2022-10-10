@@ -18,9 +18,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { server } from "../utils";
+import { useStateValue } from "../StateProvider";
 
 const Recipes = () => {
   const navigate = useNavigate();
+  const [, dispatch] = useStateValue();
   const arrayChunk = (arr, n) => {
     console.log("array: ", arr);
     const array = arr.slice();
@@ -29,23 +31,28 @@ const Recipes = () => {
     return chunks;
   };
   const recipes = [
-    { name: "Chopsuey", image: chopsuey, code: "8559" },
-    { name: "Grilled Burger", image: burger, code: "322548" },
-    { name: "Brownies", image: brownies, code: "371961" },
-    { name: "Salmon Sushi", image: sushi, code: "337652" },
-    { name: "Mocktail", image: mocktail, code: "460104" },
-    { name: "Pizza", image: pizza, code: "123710" },
-    { name: "Chicken Salad", image: salad, code: "345123" },
-    { name: "Butter Chicken", image: butterChicken, code: "227557" },
-    { name: "Chocolate Chip Cookies", image: cookies, code: "10117" },
-    { name: "Thai Curry", image: curry, code: "81916" },
-    { name: "Chinese Fried Rice", image: rice, code: "24774" },
-    { name: "Vegetable Soup", image: soup, code: "103153" },
+    { name: "Chopsuey", image: chopsuey, code: "6343589a540176212b44d4f8" },
+    { name: "Grilled Burger", image: burger, code: "63435a92540176212b453037" },
+    { name: "Brownies", image: brownies, code: "634358ab540176212b44d7c4" },
+    { name: "Salmon Sushi", image: sushi, code: "63437b6c540176212b4ab6be" },
+    { name: "Mocktail", image: mocktail, code: "634366f3540176212b471783" },
+    { name: "Pizza", image: pizza, code: "63435966540176212b44f9af" },
+    { name: "Chicken Salad", image: salad, code: "634358a4540176212b44d68c" },
+    { name: "Butter Chicken", image: butterChicken, code: "63435a69540176212b45289d" },
+    { name: "Chocolate Chip Cookies", image: cookies, code: "634360b3540176212b45ee4f" },
+    { name: "Thai Curry", image: curry, code: "63435a93540176212b453045" },
+    { name: "Chinese Fried Rice", image: rice, code: "6343599d540176212b450369" },
+    { name: "Vegetable Soup", image: soup, code: "634358f5540176212b44e529" },
   ];
 
   const getRecipeRecommendations = (recipe) => {
-    console.log(recipe);
-    //API call
+    // server.get("/recommend/"+recipe)
+    // .then((data) =>{
+    //     console.log("data", data)
+    //     dispatch({type: 'SET_RECOMMENDATIONS', recommendations: data?.recommendations})
+    //     navigate("/recommendations");
+    // })
+    // .catch((err) => alert(err.response.data.error));
     navigate("/recommendations");
   };
   return (

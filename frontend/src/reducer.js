@@ -6,6 +6,7 @@ export const initialState = {
     managedBy: null,
   },
   cart: [],
+  recommendations: []
 };
 
 function reducer(state, action) {
@@ -25,6 +26,11 @@ function reducer(state, action) {
         ...state,
         cart: action.cart,
       };
+    case "SET_RECOMMENDATIONS":
+    return {
+      ...state,
+      cart: action.recommendations,
+    };
     default:
       return state;
   }

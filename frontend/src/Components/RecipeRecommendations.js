@@ -10,12 +10,12 @@ import { useStateValue } from "../StateProvider";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-const RecipeRecommendations = ({ handleOrder }) => {
-  const [, dispatch] = useStateValue();
+const RecipeRecommendations = () => {
+  const [{recommendations}, dispatch] = useStateValue();
   const [cart, addItem] = useState([]);
-  const handleChange = (e, recipe_name) => {
+  const handleChange = (e, recipe_name, ingredients) => {
     if (e.target.checked === true) {
-      addItem((old_cart) => [...old_cart, recipe_name]);
+      addItem((old_cart) => [...old_cart, {name: recipe_name, ingredients:ingredients}]);
     } else {
       console.log("Remove");
       addItem((current) =>
@@ -138,7 +138,7 @@ const RecipeRecommendations = ({ handleOrder }) => {
                         className="checkbox"
                         name={key.name}
                         id={key.name}
-                        onChange={(e) => handleChange(e, key.name)}
+                        onChange={(e) => handleChange(e, key.name, key.ingredients)}
                       />
                       <label className="label" htmlFor={key.name}>
                         <span className="inner" />
@@ -197,7 +197,7 @@ const RecipeRecommendations = ({ handleOrder }) => {
                           color="text.secondary"
                           component="div"
                         >
-                          {key.steps.map((index, data) => {
+                          {key.steps.map((data, index) => {
                             return <li key={index}>{data}</li>;
                           })}
                         </Typography>
