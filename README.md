@@ -24,7 +24,7 @@ This is the Home Page of the website.
 * Clone this repository or download the zip file.
 * Run the ```npm install``` command inside the backend folder
 * Also run the ```npm install``` command inside the frontend folder
-* Create a .env folder and add credentials to the folder provided in .env.sample
+* Create a .env file inside the backend folder and add credentials to the folder
 * Now, run ```npm run dev``` inside the backend folder and this will get the database and backend running
 * Lastly run ```npm start``` inside the frontend folder and the Website will running on http://localhost:3000/
 
