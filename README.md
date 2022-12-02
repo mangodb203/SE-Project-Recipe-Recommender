@@ -23,7 +23,7 @@ This is the Home Page of the website.
 ![image](https://user-images.githubusercontent.com/23338660/194782226-17e5c173-b7ac-4f2a-816a-3ca7893ccd39.png)
 
 
-# Project Set up
+## Project Set up
 * Clone this repository or download the zip file.
 * Run the ```npm install``` command inside the backend folder
 * Also run the ```npm install``` command inside the frontend folder
@@ -31,5 +31,10 @@ This is the Home Page of the website.
 * Now, run ```npm run dev``` inside the backend folder and this will get the database and backend running
 * Lastly run ```npm start``` inside the frontend folder and the Website will running on http://localhost:3000/
 
-
+## Contributors
+1. [Devanshi Savla](https://github.com/devanshi39)
+2. [Indranil Banerjee](https://github.com/indranil1)
+3. [Aditya Srivastava](https://github.com/adityasvat)
+4. [Soha Bhatia](https://github.com/Sohabhatia)
+5. [Akruti Sinha](https://github.com/Akruti25)
 
