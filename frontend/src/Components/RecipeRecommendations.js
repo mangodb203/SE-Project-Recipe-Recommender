@@ -80,9 +80,9 @@ const RecipeRecommendations = () => {
                         id={key.name}
                         onChange={(e) => handleChange(e, key.name, key.ingredients)}
                       />
-                      <label className="label" htmlFor={key.name}>
+                      {/* <label className="label" htmlFor={key.name}>
                         <span className="inner" />
-                      </label>
+                      </label> */}
                     </div>
                   </div>
                 </div>
