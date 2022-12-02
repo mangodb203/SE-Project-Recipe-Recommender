@@ -10,7 +10,10 @@
 ![HTML](https://img.shields.io/badge/HTML--Green)
 ![CSS](https://img.shields.io/badge/CSS--Green)
 ![Repo Size](https://img.shields.io/github/repo-size/Kaksha/SE-Project-Recipe-Recommender)
-![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FKaksha%2FSE-Project-Recipe-Recommender)
+![GitHub forks](https://img.shields.io/github/forks/devanshi39/SE-Project-Recipe-Recommender?style=social)
+![GitHub language count](https://img.shields.io/github/languages/count/devanshi39/SE-Project-Recipe-Recommender)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/devanshi39/SE-Project-Recipe-Recommender)
+![Discord](https://img.shields.io/discord/1027412417661120582)
 
 
 
