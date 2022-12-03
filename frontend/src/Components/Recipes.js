@@ -16,6 +16,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import SearchBar from "./SearchBar";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { server } from "../utils";
 import { useStateValue } from "../StateProvider";
@@ -44,6 +46,16 @@ const Recipes = () => {
     { name: "Chinese Fried Rice", image: rice, code: "6343599d540176212b450369" },
     { name: "Vegetable Soup", image: soup, code: "634358f5540176212b44e529" },
   ];
+
+  const filterData = (query, data) => {
+    if (!query) {
+      return data;
+    } else {
+      return data.filter((d) => d.name.toLowerCase().includes(query));
+    }
+  };
+  const [searchQuery, setSearchQuery] = useState("");
+  const dataFiltered = filterData(searchQuery, recipes);
 
   const getRecipeRecommendations = (recipe) => {
     server.get("/recommend/" + recipe)
@@ -74,8 +86,9 @@ const Recipes = () => {
           Choose a recipe and we will give 10 recipe recommendations based on
           your choice.
         </Typography>
+        <div style={{ display: "flex", justifyContent: "center" }}><SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} autoFocus /></div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          {arrayChunk(...Array(recipes), 12).map((row, i) => (
+          {arrayChunk(...Array(dataFiltered), 12).map((row, i) => (
             <div
               key={i}
               className="row mx-auto"
@@ -83,7 +96,7 @@ const Recipes = () => {
             >
               {row.map((col, i) => (
                 <Card
-                  onClick={() => getRecipeRecommendations(recipes[i].code)}
+                  onClick={() => getRecipeRecommendations(dataFiltered[i].code)}
                   className="card"
                   key={i}
                   sx={{ width: "25%", maxHeight: 225 }}
@@ -92,8 +105,8 @@ const Recipes = () => {
                   <CardMedia
                     component="img"
                     height="180"
-                    image={recipes[i].image}
-                    alt={recipes[i].name}
+                    image={dataFiltered[i].image}
+                    alt={dataFiltered[i].name}
                   />
                   <CardContent>
                     <Typography
@@ -101,7 +114,7 @@ const Recipes = () => {
                       variant="h6"
                       style={{ textAlign: "center", fontSize: "14px" }}
                     >
-                      {recipes[i].name}
+                      {dataFiltered[i].name}
                     </Typography>
                   </CardContent>
                 </Card>
