@@ -2,6 +2,7 @@ import { Restaurant } from "@mui/icons-material";
 import { AppBar, IconButton, Toolbar, Typography, Button,ListItem,
   ListItemIcon,
   ListItemText } from "@mui/material";
+import Link from '@mui/material/Link';
 import { useStateValue } from "../StateProvider";
 import CreateIcon from "@mui/icons-material/Create";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
@@ -42,15 +43,22 @@ const NavBar = () => {
           <IconButton>
             <Restaurant fontSize="large" style={{ color: "white" }} />
           </IconButton> </Button>
+          
           <Typography
             style={{
               flexGrow: 1,
               color: "white",
+              cursor:"pointer"
+              
             }}
+            
+            onClick={() => navigate("/")}
             variant="h5"
           >
-            The CookBook
+           The CookBook
           </Typography>
+         
+          
            
           {menuItems.map(
               (listItem, key) =>
