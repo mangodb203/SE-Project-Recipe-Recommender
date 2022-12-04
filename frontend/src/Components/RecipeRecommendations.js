@@ -10,6 +10,7 @@ import { useStateValue } from "../StateProvider";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
+
 const RecipeRecommendations = () => {
   const [{recommendations}, dispatch] = useStateValue();
   const [cart, addItem] = useState([]);
@@ -80,9 +81,10 @@ const RecipeRecommendations = () => {
                         id={key.name}
                         onChange={(e) => handleChange(e, key.name, key.ingredients)}
                       />
-                      <label className="label" htmlFor={key.name}>
+                       {/* <label className="label" htmlFor={key.name}>
                         <span className="inner" />
-                      </label>
+                      </label>  */}
+                      
                     </div>
                   </div>
                 </div>
