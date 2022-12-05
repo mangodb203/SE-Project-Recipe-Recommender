@@ -27,14 +27,7 @@ const RecipeRecommendations = () => {
   };
 
   const navigate = useNavigate();
-  const proceedToOrder = () => {
-    if(cart.length == 0 ){
-      alert("Your cart is empty!")
-    }
-    else{
-    dispatch({type: "SET_CART", cart })
-    navigate('/order')}
-    }
+  
   
   return (
     <React.Fragment>

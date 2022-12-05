@@ -108,7 +108,7 @@ const Home = () => {
         <div style ={{marginTop: "-350px",
     marginLeft:"610px",
     marginBottom:"25px"}}>
-        <button  onClick={() => {token ? navigate("/recipes") : navigate("/login")}} style={{corsur:"pointer",width:"100px",color:"#022950", padding:"3px" ,color:"white",fontSize:"12px"}}class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Recipes <ArrowForwardIosIcon></ArrowForwardIosIcon></button>
+        <button  onClick={() => {token ? navigate("/recipes") : navigate("/login")}} style={{corsur:"pointer",width:"100px", padding:"3px" ,color:"white",fontSize:"12px"}}class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Recipes <ArrowForwardIosIcon></ArrowForwardIosIcon></button>
         </div>
         </div>
       </div>
