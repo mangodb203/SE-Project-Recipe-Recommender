@@ -72,11 +72,11 @@
   }
   .front {
     background: #fff;
-    z-index: 2;
+    z-index: 1;
   }
   .back {
     background: #022950;
-    z-index: 3;
+    z-index: 1;
     transform: rotateY(180deg);
   }
   .front {

@@ -152,7 +152,7 @@ const RecipeRecommendations = () => {
           </div>
         );
       })}
-      <Box
+      {/* <Box
         textAlign="center"
         style={{
           paddingLeft: "10px",
@@ -163,7 +163,7 @@ const RecipeRecommendations = () => {
         <Button className="button-style" onClick={proceedToOrder}>
           Proceed
         </Button>
-      </Box>
+      </Box> */}
     </React.Fragment>
   );
 };
