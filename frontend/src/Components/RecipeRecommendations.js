@@ -7,8 +7,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 import "./ToggleSwitch.css";
 import { useStateValue } from "../StateProvider";
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+
 
 const RecipeRecommendations = () => {
   const [{recommendations}, dispatch] = useStateValue();
@@ -27,14 +27,7 @@ const RecipeRecommendations = () => {
   };
 
   const navigate = useNavigate();
-  const proceedToOrder = () => {
-    if(cart.length == 0 ){
-      alert("Your cart is empty!")
-    }
-    else{
-    dispatch({type: "SET_CART", cart })
-    navigate('/order')}
-    }
+  
   
   return (
     <React.Fragment>
@@ -150,7 +143,7 @@ const RecipeRecommendations = () => {
           </div>
         );
       })}
-      <Box
+      {/* <Box
         textAlign="center"
         style={{
           paddingLeft: "10px",
@@ -161,7 +154,7 @@ const RecipeRecommendations = () => {
         <Button className="button-style" onClick={proceedToOrder}>
           Proceed
         </Button>
-      </Box>
+      </Box> */}
     </React.Fragment>
   );
 };

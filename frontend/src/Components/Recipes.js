@@ -5,11 +5,6 @@ import pizza from "../imgs/pizza.jpg";
 import sushi from "../imgs/sushi.jpg";
 import brownies from "../imgs/brownies.jpg";
 import mocktail from "../imgs/mocktail.jpg";
-import butterChicken from "../imgs/butterchicken.jpg";
-import rice from "../imgs/rice.jpg";
-import soup from "../imgs/soup.jpg";
-import curry from "../imgs/curry.jpg";
-import cookies from "../imgs/cookies.jpg";
 import "./cards.css";
 import * as React from "react";
 import Card from "@mui/material/Card";
@@ -40,11 +35,11 @@ const Recipes = () => {
     { name: "Mocktail", image: mocktail, code: "634366f3540176212b471783" },
     { name: "Pizza", image: pizza, code: "63435966540176212b44f9af" },
     { name: "Chicken Salad", image: salad, code: "634358a4540176212b44d68c" },
-    { name: "Butter Chicken", image: butterChicken, code: "63435a69540176212b45289d" },
-    { name: "Chocolate Chip Cookies", image: cookies, code: "634360b3540176212b45ee4f" },
-    { name: "Thai Curry", image: curry, code: "63435a93540176212b453045" },
-    { name: "Chinese Fried Rice", image: rice, code: "6343599d540176212b450369" },
-    { name: "Vegetable Soup", image: soup, code: "634358f5540176212b44e529" },
+    // { name: "Butter Chicken", image: butterChicken, code: "63435a69540176212b45289d" },
+    // { name: "Chocolate Chip Cookies", image: cookies, code: "634360b3540176212b45ee4f" },
+    // { name: "Thai Curry", image: curry, code: "63435a93540176212b453045" },
+    // { name: "Chinese Fried Rice", image: rice, code: "6343599d540176212b450369" },
+    // { name: "Vegetable Soup", image: soup, code: "634358f5540176212b44e529" },
   ];
 
   const filterData = (query, data) => {
