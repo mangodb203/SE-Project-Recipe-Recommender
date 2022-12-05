@@ -7,7 +7,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 import "./ToggleSwitch.css";
 import { useStateValue } from "../StateProvider";
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 

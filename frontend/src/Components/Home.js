@@ -7,18 +7,14 @@ import breakfast from "../imgs/breakfast.jpg";
 import "./cards.scss";
 import { Button } from "@mui/material";
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
-import ReactCardFlipper from "react-card-flipper";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Home = () => {
     const [{token},dispatch,] = useStateValue();
-    const [flip, setFlip] = React.useState(0);
+    
   const navigate = useNavigate();
   const landingInfo = [
     { name: "Healthy", image: salad, text:"Whether you like salty, sweet, crunchy or cold there are plenty of healthy options to choose from. Click below to get some healthy recommendations." },
