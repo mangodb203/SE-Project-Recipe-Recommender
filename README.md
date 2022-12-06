@@ -30,6 +30,7 @@ This is the Home Page of the website.
 We have used Amazon EC2 instances, with its supporting VPC's to host our application on cloud. This gives almost 99.7% uptime of the application.
 2. Mongo DB Atlas
 3. Jupyter Notebook
+4. Jenkins for CI
 
 ### Technology:
 1. Node.js
@@ -48,6 +49,7 @@ We have used Amazon EC2 instances, with its supporting VPC's to host our applica
 ## Getting Started for AWS
 
 Please use the link below to access the application hosted on AWS EC2 instance
+We have done continuous integration with the help of Jenkins
 
 http://ec2-3-238-67-17.compute-1.amazonaws.com:3000/
 
