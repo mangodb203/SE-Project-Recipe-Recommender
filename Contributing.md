@@ -164,7 +164,7 @@ repository, if you have read till this point congrats you have a lot of patience
 
 https://discord.gg/egAMuKQV
 
-![image]()
+![image](https://github.com/devanshi39/SE-Project-Recipe-Recommender/blob/Indranil_Develop/docs/Discord_Chat_Channel.jpeg)
 
 
 

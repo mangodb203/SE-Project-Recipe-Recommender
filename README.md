@@ -21,6 +21,7 @@
 Recipe Recommendation System helps users to select their favorite food category and recommends recipes based on it. The users are then able to view the recipe and the ingredients required, and place an order for those ingredients.
 
 This is the Home Page of the website.
+
 ![image](https://user-images.githubusercontent.com/23338660/194782226-17e5c173-b7ac-4f2a-816a-3ca7893ccd39.png)
 
 ## Tools and Technology Used
