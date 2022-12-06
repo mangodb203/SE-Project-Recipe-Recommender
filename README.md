@@ -53,7 +53,7 @@ http://ec2-3-238-67-17.compute-1.amazonaws.com:3000/
 
 ## Video Demonstration
 
-[video]()
+[video](https://drive.google.com/file/d/1_feIWoAjwSuIMBCaOStx34JWHk_R2hNW/view?usp=share_link)
 
 ## Directory Structure
 
