@@ -36,13 +36,18 @@ We have used Amazon EC2 instances, with its supporting VPC's to host our applica
 3. Mongo DB
 4. Python3
 
-## Project Set up
+## Getting Started (For local setup)
 * Clone this repository or download the zip file.
 * Run the ```npm install``` command inside the backend folder
 * Also run the ```npm install``` command inside the frontend folder
 * Create a .env file inside the backend folder and add credentials to the folder
 * Now, run ```npm run dev``` inside the backend folder and this will get the database and backend running
 * Lastly run ```npm start``` inside the frontend folder and the Website will running on http://localhost:3000/
+
+## Getting Started for AWS
+
+*Please use the link below to access the application hosted on AWS EC2 instance
+http://ec2-3-238-67-17.compute-1.amazonaws.com:3000/
 
 ## Contributors
 1. [Devanshi Savla](https://github.com/devanshi39)
