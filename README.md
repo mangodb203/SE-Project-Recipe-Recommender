@@ -23,6 +23,18 @@ Recipe Recommendation System helps users to select their favorite food category 
 This is the Home Page of the website.
 ![image](https://user-images.githubusercontent.com/23338660/194782226-17e5c173-b7ac-4f2a-816a-3ca7893ccd39.png)
 
+## Tools and Technology Used
+### Tools:
+1. AWS Cloud 
+We have used Amazon EC2 instances, with its supporting VPC's to host our application on cloud. This gives almost 99.7% uptime of the application.
+2. Mongo DB Atlas
+3. Jupyter Notebook
+
+### Technology:
+1. Node.js
+2. React.js
+3. Mongo DB
+4. Python3
 
 ## Project Set up
 * Clone this repository or download the zip file.
