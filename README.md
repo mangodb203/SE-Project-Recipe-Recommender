@@ -56,152 +56,150 @@ http://ec2-3-238-67-17.compute-1.amazonaws.com:3000/
 [video](https://drive.google.com/file/d/1_feIWoAjwSuIMBCaOStx34JWHk_R2hNW/view?usp=share_link)
 
 ## Directory Structure
-
-Project_Directory:.
-│   .dvcignore
-│   .gitignore
-│   Citation.cff
-│   CODE_OF_CONDUCT.md
-│   Contributing.md
-│   Install.md
-│   LICENSE
-│   package-lock.json
-│   package.json
-│   README.md
-│
-├───.dvc
-│   │   .gitignore
-│   │   config
-│   │
-│   └───plots
-│           confusion.json
-│           confusion_normalized.json
-│           default.json
-│           linear.json
-│           scatter.json
-│           smooth.json
-│
-├───.github
-│   └───workflows
-│           node-app.yml
-│
-├───AI
-│   │   .gitignore
-│   │   data.dvc
-│   │   INSTALL.md
-│   │   requirements.txt
-│   │
-│   ├───notebooks
-│   │       collab_filtering.ipynb
-│   │       correlation.ipynb
-│   │       data_exploration.ipynb
-│   │       lightfm_sample.ipynb
-│   │       Tfid.ipynb
-│   │
-│   └───src
-│           data_loader_to_db.py
-│           inference.py
-│           service.py
-│
-├───backend
-│   │   .env.sample
-│   │   .gitignore
-│   │   index.js
-│   │   package-lock.json
-│   │   package.json
-│   │
-│   ├───controllers
-│   │   │   order.js
-│   │   │   recipe.js
-│   │   │   recommend.js
-│   │   │
-│   │   └───auth
-│   │           index.js
-│   │           middlewares.js
-│   │
-│   ├───models
-│   │       Order.js
-│   │       Recipe.js
-│   │       Recommendation.js
-│   │       User.js
-│   │
-│   ├───routes
-│   │       auth.js
-│   │       order.js
-│   │       recipe.js
-│   │       recommend.js
-│   │
-│   └───utils
-│           transporter.js
-│
-├───docs
-│       chatchannelproof.md
-│       LinuxKernelBestPractices.png
-│       proj1rubric.md
-│       proj1rubricComments.pdf
-│
-└───frontend
-    │   .prettierignore
-    │   .prettierrc.json
+    │   .dvcignore
+    │   .gitignore
+    │   Citation.cff
+    │   CODE_OF_CONDUCT.md
+    │   Contributing.md
+    │   Install.md
+    │   LICENSE
     │   package-lock.json
     │   package.json
+    │   README.md
     │
-    ├───public
-    │       index.html
+    ├───.dvc
+    │   │   .gitignore
+    │   │   config
+    │   │
+    │   └───plots
+    │           confusion.json
+    │           confusion_normalized.json
+    │           default.json
+    │           linear.json
+    │           scatter.json
+    │           smooth.json
     │
-    └───src
-        │   App.js
-        │   index.css
-        │   index.js
-        │   reducer.js
-        │   setupTests.js
-        │   StateProvider.js
+    ├───.github
+    │   └───workflows
+    │           node-app.yml
+    │
+    ├───AI
+    │   │   .gitignore
+    │   │   data.dvc
+    │   │   INSTALL.md
+    │   │   requirements.txt
+    │   │
+    │   ├───notebooks
+    │   │       collab_filtering.ipynb
+    │   │       correlation.ipynb
+    │   │       data_exploration.ipynb
+    │   │       lightfm_sample.ipynb
+    │   │       Tfid.ipynb
+    │   │
+    │   └───src
+    │           data_loader_to_db.py
+    │           inference.py
+    │           service.py
+    │
+    ├───backend
+    │   │   .env.sample
+    │   │   .gitignore
+    │   │   index.js
+    │   │   package-lock.json
+    │   │   package.json
+    │   │
+    │   ├───controllers
+    │   │   │   order.js
+    │   │   │   recipe.js
+    │   │   │   recommend.js
+    │   │   │
+    │   │   └───auth
+    │   │           index.js
+    │   │           middlewares.js
+    │   │
+    │   ├───models
+    │   │       Order.js
+    │   │       Recipe.js
+    │   │       Recommendation.js
+    │   │       User.js
+    │   │
+    │   ├───routes
+    │   │       auth.js
+    │   │       order.js
+    │   │       recipe.js
+    │   │       recommend.js
+    │   │
+    │   └───utils
+    │           transporter.js
+    │
+    ├───docs
+    │       chatchannelproof.md
+    │       LinuxKernelBestPractices.png
+    │       proj1rubric.md
+    │       proj1rubricComments.pdf
+    │
+    └───frontend
+        │   .prettierignore
+        │   .prettierrc.json
+        │   package-lock.json
+        │   package.json
         │
-        ├───Components
-        │   │   AddressForm.js
-        │   │   cards.css
-        │   │   cards.scss
-        │   │   Home.js
-        │   │   Navbar.js
-        │   │   Order.js
-        │   │   PaymentForm.js
-        │   │   RecipeRecommendations.js
-        │   │   Recipes.js
-        │   │   Review.js
-        │   │   SearchBar.js
-        │   │   ToggleSwitch.css
-        │   │
-        │   ├───auth
-        │   │       Base.js
-        │   │       ChangePassword.js
-        │   │       ForgotPassword.js
-        │   │       index.js
-        │   │
-        │   └───LandingPage
-        │           LandingPage.css
-        │           LandingPage.js
-        │           LandingPage.test.js
+        ├───public
+        │       index.html
         │
-        ├───imgs
-        │       breakfast.jpg
-        │       brownies.jpg
-        │       burger.jpg
-        │       butterchicken.jpg
-        │       chinese.jpg
-        │       chopsuey.jpg
-        │       cookies.jpg
-        │       curry.jpg
-        │       MainImage.jpg
-        │       Mexican.jpg
-        │       mocktail.jpg
-        │       pizza.jpg
-        │       rice.jpg
-        │       salad.jpg
-        │       soup.jpg
-        │       sushi.jpg
-        │
-        └───utils
-                index.js
+        └───src
+            │   App.js
+            │   index.css
+            │   index.js
+            │   reducer.js
+            │   setupTests.js
+            │   StateProvider.js
+            │
+            ├───Components
+            │   │   AddressForm.js
+            │   │   cards.css
+            │   │   cards.scss
+            │   │   Home.js
+            │   │   Navbar.js
+            │   │   Order.js
+            │   │   PaymentForm.js
+            │   │   RecipeRecommendations.js
+            │   │   Recipes.js
+            │   │   Review.js
+            │   │   SearchBar.js
+            │   │   ToggleSwitch.css
+            │   │
+            │   ├───auth
+            │   │       Base.js
+            │   │       ChangePassword.js
+            │   │       ForgotPassword.js
+            │   │       index.js
+            │   │
+            │   └───LandingPage
+            │           LandingPage.css
+            │           LandingPage.js
+            │           LandingPage.test.js
+            │
+            ├───imgs
+            │       breakfast.jpg
+            │       brownies.jpg
+            │       burger.jpg
+            │       butterchicken.jpg
+            │       chinese.jpg
+            │       chopsuey.jpg
+            │       cookies.jpg
+            │       curry.jpg
+            │       MainImage.jpg
+            │       Mexican.jpg
+            │       mocktail.jpg
+            │       pizza.jpg
+            │       rice.jpg
+            │       salad.jpg
+            │       soup.jpg
+            │       sushi.jpg
+            │
+            └───utils
+                    index.js
 
 ## Project Documentation
 
