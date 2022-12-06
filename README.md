@@ -55,6 +55,10 @@ http://ec2-3-238-67-17.compute-1.amazonaws.com:3000/
 
 [video](https://drive.google.com/file/d/1_feIWoAjwSuIMBCaOStx34JWHk_R2hNW/view?usp=share_link)
 
+## Project Documentation
+
+You can view the descriptive project documentation [here](https://cook-cb056.web.app)
+
 ## Directory Structure
     │   .dvcignore
     │   .gitignore
@@ -201,9 +205,6 @@ http://ec2-3-238-67-17.compute-1.amazonaws.com:3000/
             └───utils
                     index.js
 
-## Project Documentation
-
-You can view the descriptive project documentation [here]()
 
 ## Contributors
 1. [Devanshi Savla](https://github.com/devanshi39)
