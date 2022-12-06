@@ -149,16 +149,24 @@ If you want to contribute and make an significant enhancement based on our proje
 
 The following are the team members who contributed and made this project.
 
-* Kaksha Mhatre(kpmhatre@ncsu.edu)
-* Praneya Lal(plal@ncsu.edu)
-* Mitanshu Reshamwala(mresham@ncsu.edu)
-* Janvi Jitendra Phadtare(jphadta@ncsu.edu)
-* Mitul Bipinbhai Patel(mpatel27@ncsu.edu)
+1. [Devanshi Savla](https://github.com/devanshi39)
+2. [Indranil Banerjee](https://github.com/indranil1)
+3. [Aditya Srivastava](https://github.com/adityasvat)
+4. [Soha Bhatia](https://github.com/Sohabhatia)
+5. [Akruti Sinha](https://github.com/Akruti25)
 
 ### Attribution
 
 The contribution file is based on atom(repository). Please check it out as it gives in-depth explanation of everything you need to include in your github
-repository, if you have read till this point congrats you have a lot of patience, happy coding❤️
+repository, if you have read till this point congrats you have a lot of patience, happy coding.
+
+### Discord Chat Channel
+
+https://discord.gg/egAMuKQV
+
+![image]()
+
+
 
 
 

@@ -213,3 +213,7 @@ You can view the descriptive project documentation [here]()
 4. [Soha Bhatia](https://github.com/Sohabhatia)
 5. [Akruti Sinha](https://github.com/Akruti25)
 
+To find out how you can contribute to this project, read the [CONTRIBUTING.md](https://github.com/devanshi39/SE-Project-Recipe-Recommender/blob/Indranil_Develop/Contributing.md) file
+
+The discord chat channel link is included in the file [CONTRIBUTING.md](https://github.com/devanshi39/SE-Project-Recipe-Recommender/blob/Indranil_Develop/Contributing.md)
+
