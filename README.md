@@ -17,7 +17,7 @@
 ![GitHub Workflow Status](https://github.com/devanshi39/SE-Project-Recipe-Recommender/actions/workflows/node-app.yml/badge.svg?branch=main)
 
 
-
+## What is Recipe Recommendation System?
 Recipe Recommendation System helps users to select their favorite food category and recommends recipes based on it. The users are then able to view the recipe and the ingredients required, and place an order for those ingredients.
 
 This is the Home Page of the website.
