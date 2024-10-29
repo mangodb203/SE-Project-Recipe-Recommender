@@ -19,7 +19,10 @@ import {
   FormControlLabel,
   Radio,
   RadioGroup,
-  IconButton
+  IconButton,
+  Box,
+  Paper,
+
 } from '@mui/material';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
@@ -27,6 +30,7 @@ import { initialState } from "../reducer";
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import RecipeCard from './RecipeCard';
+import { useNavigate } from "react-router-dom";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -45,6 +49,7 @@ function Recipe() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const userId = JSON.parse(initialState.user)._id;
+  const navigate = useNavigate();
 
   const handleSliderChange = (name) => (event, newValue) => {
     setFormData({ ...formData, [name]: newValue });
@@ -76,6 +81,13 @@ function Recipe() {
     e.preventDefault();
     setLoading(true);
     setError('');
+
+    if (formData.ingredients.length === 0) {
+      setError('Please select at least one ingredient.');
+      setLoading(false);
+      return;
+    }
+
 
     try {
       const response = await axios.post('http://localhost:5000/recommend', {
@@ -114,74 +126,99 @@ function Recipe() {
   };
 
   return (
-    <Container maxWidth="md">
-      <Typography variant="h4" gutterBottom>
+    <Container maxWidth="lg">
+      <Typography variant="h3" gutterBottom align="center" sx={{ mt: 4, mb: 4 }}>
         Recipe Recommendations
       </Typography>
-      <form onSubmit={handleSubmit}>
-        <Grid container spacing={3}>
-          {['calories', 'fat', 'carbohydrates', 'protein', 'cholesterol', 'sodium', 'fiber'].map((key) => (
-            <Grid item xs={12} key={key}>
-              <Typography gutterBottom>{key.charAt(0).toUpperCase() + key.slice(1)}</Typography>
-              <Slider
-                value={formData[key]}
-                onChange={handleSliderChange(key)}
-                aria-labelledby={`${key}-slider`}
-                valueLabelDisplay="auto"
-                min={0}
-                max={key === 'calories' ? 1000 : 100}
-                step={1}
-              />
-            </Grid>
-          ))}
-          <Grid item xs={12}>
-            <Select
-              multiple
-              value={formData.ingredients}
-              onChange={handleMultiSelectChange}
-              renderValue={(selected) => selected.join(', ')}
-              fullWidth
-            >
-              {['chicken', 'beef', 'pork', 'fish', 'vegetables', 'pasta', 'rice'].map((name) => (
-                <MenuItem key={name} value={name}>
-                  <Checkbox checked={formData.ingredients.indexOf(name) > -1} />
-                  <Typography>{name}</Typography>
-                </MenuItem>
+      <Paper elevation={3} sx={{ p: 4, mb: 4 }}>
+        <form onSubmit={handleSubmit}>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={8}>
+              <Typography variant="h5" gutterBottom>Nutritional Preferences</Typography>
+              {['calories', 'fat', 'carbohydrates', 'protein', 'cholesterol', 'sodium', 'fiber'].map((key) => (
+                <Box key={key} sx={{ mb: 2 }}>
+                  <Typography gutterBottom>{key.charAt(0).toUpperCase() + key.slice(1)}</Typography>
+                  <Slider
+                    value={formData[key]}
+                    onChange={handleSliderChange(key)}
+                    aria-labelledby={`${key}-slider`}
+                    valueLabelDisplay="auto"
+                    min={0}
+                    max={key === 'calories' ? 1000 : 100}
+                    step={1}
+                  />
+                </Box>
               ))}
-            </Select>
-          </Grid>
-          <Grid item xs={12}>
-            <Button type="submit" variant="contained" color="primary" fullWidth disabled={loading}>
-              {loading ? <CircularProgress size={24} /> : 'Get Recommendations'}
-            </Button>
-          </Grid>
-        </Grid>
-      </form>
-
-      <Grid container spacing={2} style={{ marginTop: '2rem' }}>
-        <Grid item xs={12} md={6}>
-          <Typography variant="h6" gutterBottom>
-            Nutritional Breakdown
-          </Typography>
-          <Pie data={nutritionData} />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          {recommendations.length > 0 && (
-            <div>
-              <Typography variant="h5" gutterBottom>
-                Recommendations
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Typography variant="h5" gutterBottom>Ingredients</Typography>
+              <Select
+                multiple
+                value={formData.ingredients}
+                onChange={handleMultiSelectChange}
+                renderValue={(selected) => selected.join(', ')}
+                fullWidth
+                sx={{ mb: 2 }}
+              >
+                {['chicken', 'beef', 'pork', 'fish', 'vegetables', 'pasta', 'rice'].map((name) => (
+                  <MenuItem key={name} value={name}>
+                    <Checkbox checked={formData.ingredients.indexOf(name) > -1} />
+                    <Typography>{name}</Typography>
+                  </MenuItem>
+                ))}
+              </Select>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                fullWidth
+                disabled={loading}
+                size="large"
+                sx={{ mt: 2 }}
+              >
+                {loading ? <CircularProgress size={24} /> : 'Get Recommendations'}
+              </Button>
+              <Typography variant="h6" gutterBottom align="center" sx={{ mt: 3 }}>
+                Nutritional Breakdown
               </Typography>
-              <Grid container spacing={2}>
+              <Box sx={{ height: 300, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Pie data={nutritionData} options={{ responsive: true, maintainAspectRatio: false }} />
+              </Box>
+            </Grid>
+          </Grid>
+        </form>
+      </Paper>
+
+      {recommendations.length > 0 && (
+        <Paper elevation={3} sx={{ p: 4, mb: 4 }}>
+          <Typography variant="h4" gutterBottom align="center">Results</Typography>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={12}>
+              <Typography variant="h6" gutterBottom align="center">
+                Recommended Recipes
+              </Typography>
+              <Grid container spacing={4}>
                 {recommendations.map((recipe, index) => (
-                  <Grid item xs={12} sm={6} key={index}>
+                  <Grid item xs={12} sm={4} key={index}>
                     <RecipeCard recipe={recipe} onBookmark={bookmarkRecipe} />
                   </Grid>
                 ))}
               </Grid>
-            </div>
-          )}
-        </Grid>
-      </Grid>
+            </Grid>
+          </Grid>
+        </Paper>
+      )}
+
+      <Button
+        variant="contained"
+        color="primary"
+        fullWidth
+        size="large"
+        sx={{ mt: 2 }}
+        onClick={() => navigate('/bookmarks')}
+      >
+        View your bookmarks
+      </Button>
 
       <Snackbar open={!!error} autoHideDuration={6000} onClose={() => setError('')}>
         <Alert onClose={() => setError('')} severity="error" sx={{ width: '100%' }}>
