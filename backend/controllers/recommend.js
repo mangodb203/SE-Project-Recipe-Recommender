@@ -1,70 +1,68 @@
 const Recipe = require("../models/Recipe");
 const Recommendation = require("../models/Recommendation");
 const fetch = require("node-fetch");
+const axios = require("axios");
 
 exports.getRecommendation = async (req, res) => {
-  const { recipeID } = req.params;
+ try {
+    // Extract data from request body
+    const {
+      calories,
+      fat,
+      carbohydrates,
+      protein,
+      cholesterol,
+      sodium,
+      fiber,
+      ingredients
+    } = req.body;
 
-  //Try finding in cache first
-  try {
-    const recommendations = await Recommendation.findOne({
-      recipe: recipeID,
-    }).populate("recipe recommendations");
-    
-    if (recommendations) {
-      return res.send(recommendations);
-    }
-  } catch (err) {
-    console.log(err);
-  }
-
-  //If not in cache, then request from AI service
-  try {
-    const recipe = await Recipe.findOne({ _id: recipeID });
-
-    if (!recipe) {
-      return res.status(400).send({ error: "No recipe found" });
-    }
-
-    const response = await fetch(`${process.env.AI_URL}/recipe/${recipe.name}`);
-    const recommendations = await response.json();
-
-    let recommendationsWithIDs = await Promise.all(
-      recommendations.map(async (recommendation) => {
-        const recipeFound = await Recipe.findOne({ name: recommendation });
-        return recipeFound?._id.toString();
-      })
-    );
-
-    recommendationsWithIDs = recommendationsWithIDs.filter((element) => {
-      return element !== null;
-    });
-
-    if (recommendationsWithIDs.length < 10) {
-      // Randomly get (10-length) recipes
-      const randRecommend = await Recipe.aggregate().sample(
-        10 - recommendationsWithIDs.length
-      );
-      randRecommend.map((recommendation) => {
-        return recommendation?._id.toString();
+    // Validate input
+    if (!calories || !fat || !carbohydrates || !protein || !cholesterol || !sodium || !fiber || !ingredients) {
+      return res.status(400).json({
+        success: false,
+        error: 'All fields are required'
       });
-      recommendationsWithIDs.push(randRecommend);
     }
 
-    const recommendationsCache = new Recommendation({
-      recipe: recipeID,
-      recommendations: recommendationsWithIDs,
+    // Prepare data for Flask API
+    const recipeData = {
+      calories: parseFloat(calories),
+      fat: parseFloat(fat),
+      carbohydrates: parseFloat(carbohydrates),
+      protein: parseFloat(protein),
+      cholesterol: parseFloat(cholesterol),
+      sodium: parseFloat(sodium),
+      fiber: parseFloat(fiber),
+      ingredients
+    };
+
+    // Make a POST request to the Flask API
+    const response = await axios.post('http://localhost:8000/recommend', recipeData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
 
-    await recommendationsCache.save();
-
-    const responseRecommendations = await Recommendation.find({
-      recipe: recipeID,
-    }).populate("recipe recommendations");
-
-    return res.send(responseRecommendations);
-  } catch (err) {
-    console.log(err);
-    return res.status(400).send({ err: "Check logs for error" });
+    // Check if the request was successful
+    if (response.data.success) {
+      // Send the recommendations back to the client
+      res.json({
+        success: true,
+        recommendations: response.data.recommendations
+      });
+    } else {
+      // If the Flask API returns an error
+      res.status(400).json({
+        success: false,
+        error: response.data.error
+      });
+    }
+  } catch (error) {
+    console.error('Error calling Flask API:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'An error occurred while fetching recommendations' 
+    });
   }
 };
