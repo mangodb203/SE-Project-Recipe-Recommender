@@ -42,10 +42,15 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
     salt: String,
+    bookmarks: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Food'
+    }]
   },
   {
     timestamps: true,
-  }
+  },
+
 );
 
 userSchema
