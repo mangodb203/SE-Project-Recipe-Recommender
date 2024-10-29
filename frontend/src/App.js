@@ -11,6 +11,7 @@ import RecipeRecommendations from "./Components/RecipeRecommendations";
 import NavBar from "./Components/Navbar";
 import Order from "./Components/Order";
 import { useState } from "react";
+import BookmarksPage from "./Components/BookmarksPage";
 
 function App() {
   const [
@@ -53,6 +54,7 @@ function App() {
           <Route path="reset-password/:token" element={<ChangePassword />} />
           <Route path="recommendations" element={<RecipeRecommendations />} />
           <Route path="order" element={<Order />} />
+          <Route path="bookmarks" element={<BookmarksPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
