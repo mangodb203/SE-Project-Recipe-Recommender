@@ -19,9 +19,14 @@ import {
   FormControlLabel,
   Radio,
   RadioGroup,
+  IconButton
 } from '@mui/material';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import { initialState } from "../reducer";
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import RecipeCard from './RecipeCard';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -39,6 +44,7 @@ function Recipe() {
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const userId = JSON.parse(initialState.user)._id;
 
   const handleSliderChange = (name) => (event, newValue) => {
     setFormData({ ...formData, [name]: newValue });
@@ -46,6 +52,24 @@ function Recipe() {
 
   const handleMultiSelectChange = (event) => {
     setFormData({ ...formData, ingredients: event.target.value });
+  };
+
+  const bookmarkRecipe = async (recipe) => {
+    try {
+      await axios.post('http://localhost:5000/api/bookmark', { userId, recipe });
+      // Update UI or state to reflect the new bookmark
+    } catch (error) {
+      console.error('Error bookmarking recipe:', error);
+    }
+  };
+
+  const undoBookmark = async (recipe) => {
+    try {
+      await axios.delete('http://localhost:5000/api/bookmark', { data: { userId, recipeId: recipe._id } });
+      // Update UI or state to reflect the removed bookmark
+    } catch (error) {
+      console.error('Error removing bookmark:', error);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -150,22 +174,7 @@ function Recipe() {
               <Grid container spacing={2}>
                 {recommendations.map((recipe, index) => (
                   <Grid item xs={12} sm={6} key={index}>
-                    <Card>
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image={recipe.image_url}
-                        alt={recipe.recipe_name}
-                      />
-                      <CardContent>
-                        <Typography gutterBottom variant="h6" component="div">
-                          {recipe.recipe_name}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          Ingredients: {recipe.ingredients_list}
-                        </Typography>
-                      </CardContent>
-                    </Card>
+                    <RecipeCard recipe={recipe} onBookmark={bookmarkRecipe} />
                   </Grid>
                 ))}
               </Grid>
