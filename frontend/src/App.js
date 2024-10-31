@@ -7,10 +7,7 @@ import ChangePassword from "./Components/auth/ChangePassword";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import { initialState } from "./reducer";
 import Recipes from "./Components/Recipes";
-import RecipeRecommendations from "./Components/RecipeRecommendations";
 import NavBar from "./Components/Navbar";
-import Order from "./Components/Order";
-import { useState } from "react";
 import BookmarksPage from "./Components/BookmarksPage";
 
 function App() {
@@ -52,8 +49,6 @@ function App() {
           <Route path="signup" element={<SignUp />} />
           <Route path="forgot-password" element={<ForgotPassword />} />
           <Route path="reset-password/:token" element={<ChangePassword />} />
-          <Route path="recommendations" element={<RecipeRecommendations />} />
-          <Route path="order" element={<Order />} />
           <Route path="bookmarks" element={<BookmarksPage />} />
         </Route>
       </Routes>
