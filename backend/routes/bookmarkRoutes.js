@@ -42,7 +42,6 @@ router.delete('/bookmark', async (req, res) => {
         const { userId, recipeId } = req.body;
 
         const user = await User.findById(userId);
-        console.log(user, recipeId);
         user.bookmarks = user.bookmarks.filter(bookmark => bookmark.toString() !== recipeId);
         await user.save();
         res.status(200).json({ message: 'Bookmark removed successfully' });

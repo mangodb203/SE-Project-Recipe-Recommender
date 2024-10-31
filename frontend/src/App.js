@@ -9,6 +9,7 @@ import { initialState } from "./reducer";
 import Recipes from "./Components/Recipes";
 import NavBar from "./Components/Navbar";
 import BookmarksPage from "./Components/BookmarksPage";
+import React from "react";
 
 function App() {
   const [
@@ -28,13 +29,13 @@ function App() {
         dispatch({ type: "SET_USER", user });
       } else {
         dispatch({ type: "SET_TOKEN", token: null });
-        dispatch({ type: "SET_USER", user: initialState.user });
+        dispatch({ type: "SET_USER", user: initialState?.user });
       }
     }, 5000);
     return () => {
       clearInterval(authStateChange);
       dispatch({ type: "SET_TOKEN", token: null });
-      dispatch({ type: "SET_USER", user: initialState.user });
+      dispatch({ type: "SET_USER", user: initialState?.user });
     };
     // eslint-disable-next-line
   }, []);

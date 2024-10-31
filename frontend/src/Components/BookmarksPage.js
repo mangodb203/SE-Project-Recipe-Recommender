@@ -19,7 +19,9 @@ function BookmarksPage() {
   const [bookmarks, setBookmarks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const userId = JSON.parse(initialState.user)._id;
+  //check if initialState.user is a string or an object
+  let jsonUser = typeof(initialState.user)=='string' ? JSON.parse(initialState.user) : initialState.user;
+  const userId = jsonUser._id;
 
   useEffect(() => {
     fetchBookmarks();
@@ -47,15 +49,12 @@ function BookmarksPage() {
     }
   };
 
-  if (loading) {
-    return <CircularProgress />;
-  }
-
   return (
     <Container maxWidth="md">
       <Typography variant="h4" gutterBottom>
         My Bookmarks
       </Typography>
+      {loading && <CircularProgress />}
       {bookmarks.length === 0 ? (
         <Typography>You haven't bookmarked any recipes yet.</Typography>
       ) : (

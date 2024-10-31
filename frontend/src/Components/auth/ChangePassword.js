@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import { server } from "../../utils";
 import { useParams, useNavigate } from "react-router-dom";
+import React from "react";
 
 const ChangePassword = () => {
   const { token } = useParams();

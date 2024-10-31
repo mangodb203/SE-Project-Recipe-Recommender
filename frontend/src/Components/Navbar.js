@@ -9,6 +9,7 @@ import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import { useNavigate } from "react-router-dom";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { initialState } from "../reducer";
+import React from "react";
 
 
 const NavBar = () => {

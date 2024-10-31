@@ -1,7 +1,8 @@
 import { Card, CardMedia, CardContent, Typography, IconButton } from '@mui/material';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
-import { useState } from 'react';
+import React,{ useState } from 'react';
+
 function RecipeCard({ recipe, onBookmark }) {
     const [isBookmarked, setIsBookmarked] = useState(false);
     const handleBookmark = () => {

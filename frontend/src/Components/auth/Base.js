@@ -11,6 +11,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
 import { server } from "../../utils";
+import React from "react";
 
 const Base = ({ isLogin }) => {
   const [, dispatch] = useStateValue();
@@ -28,7 +29,6 @@ const Base = ({ isLogin }) => {
         ...state,
       })
       .then(({ data: { token, user } }) => {
-        console.log(token, user);
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
 

@@ -5,9 +5,6 @@ import {
   Button,
   Grid,
   Typography,
-  Card,
-  CardContent,
-  CardMedia,
   Container,
   CircularProgress,
   Snackbar,
@@ -15,11 +12,6 @@ import {
   Select,
   MenuItem,
   Checkbox,
-  FormGroup,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-  IconButton,
   Box,
   Paper,
 
@@ -27,8 +19,6 @@ import {
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import { initialState } from "../reducer";
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
 import RecipeCard from './RecipeCard';
 import { useNavigate } from "react-router-dom";
 
@@ -43,12 +33,14 @@ function Recipe() {
     cholesterol: 100,
     sodium: 500,
     fiber: 10,
-    ingredients: [],
+    ingredients: ['chicken'],
   });
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const userId = JSON.parse(initialState.user)._id;
+  const jsonUser = typeof(initialState.user)=='string' ? JSON.parse(initialState.user) : initialState.user;
+
+  const userId = jsonUser._id;
   const navigate = useNavigate();
 
   const handleSliderChange = (name) => (event, newValue) => {
@@ -140,6 +132,7 @@ function Recipe() {
                   <Typography gutterBottom>{key.charAt(0).toUpperCase() + key.slice(1)}</Typography>
                   <Slider
                     value={formData[key]}
+                    data-testid={`${key}-slider`}
                     onChange={handleSliderChange(key)}
                     aria-labelledby={`${key}-slider`}
                     valueLabelDisplay="auto"
@@ -162,7 +155,8 @@ function Recipe() {
               >
                 {['chicken', 'beef', 'pork', 'fish', 'vegetables', 'pasta', 'rice'].map((name) => (
                   <MenuItem key={name} value={name}>
-                    <Checkbox checked={formData.ingredients.indexOf(name) > -1} />
+                    <Checkbox data-testid={`${name}-checkbox`}
+                     checked={formData.ingredients.indexOf(name) > -1} />
                     <Typography>{name}</Typography>
                   </MenuItem>
                 ))}
@@ -175,6 +169,7 @@ function Recipe() {
                 disabled={loading}
                 size="large"
                 sx={{ mt: 2 }}
+                data-testid="submit-button"
               >
                 {loading ? <CircularProgress size={24} /> : 'Get Recommendations'}
               </Button>

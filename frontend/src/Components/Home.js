@@ -33,7 +33,9 @@ const Home = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "end",
+          
         }}
+         data-testid="main-image-container-banner"
       >
         <div
           style={{

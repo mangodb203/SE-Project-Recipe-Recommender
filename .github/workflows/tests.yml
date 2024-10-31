@@ -1,0 +1,39 @@
+name: Tests
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+        
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+        
+    - name: Install dependencies
+      run: |
+        cd backend && npm install
+        cd ../frontend && npm install
+        cd ../AI && pip install -r requirements.txt
+        
+    - name: Run backend tests
+      run: cd backend && npm test
+      
+    - name: Run frontend tests
+      run: cd frontend && npm test
+      
+    - name: Run AI tests
+      run: cd AI && pytest test_app.py 

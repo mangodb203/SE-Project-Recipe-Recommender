@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import React from "react";
 import { server } from "../../utils";
 
 const ForgotPassword = () => {
