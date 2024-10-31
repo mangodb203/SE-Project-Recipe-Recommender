@@ -9,6 +9,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    env:
+        DATABASE: ${{ secrets.DATABASE }}
     
     steps:
     - uses: actions/checkout@v2
@@ -29,8 +32,8 @@ jobs:
         cd ../frontend && npm install
         cd ../AI && pip install -r requirements.txt
         
-    # - name: Run backend tests
-    #   run: cd backend && npx jest
+    - name: Run backend tests
+      run: cd backend && npx jest
       
     - name: Run frontend tests
       run: cd frontend && npm test
