@@ -30,7 +30,7 @@ jobs:
         cd ../AI && pip install -r requirements.txt
         
     - name: Run backend tests
-      run: cd backend && npm test
+      run: cd backend && npx jest
       
     - name: Run frontend tests
       run: cd frontend && npm test
