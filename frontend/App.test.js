@@ -8,7 +8,6 @@ import Home from '../frontend/src/Components/Home';
 import BookmarksPage from '../frontend/src/Components/BookmarksPage';
 import reducer, { initialState } from '../frontend/src/reducer';
 import '@testing-library/jest-dom';
-import userEvent from '@testing-library/user-event';
 
 
 global.fetch = jest.fn();
