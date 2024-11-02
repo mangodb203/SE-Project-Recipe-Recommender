@@ -211,6 +211,14 @@ https://github.com/user-attachments/assets/004aa3b2-0278-4c4d-a05e-303d779fe239
 2. [Nirmit Deliwala](https://github.com/NRDeli)
 3. [Nisarg Jasani](https://github.com/NisargJasani0602)
 
+## Previous Contributors
+1. [Devanshi Savla](https://github.com/devanshi39)
+2. [Indranil Banerjee](https://github.com/indranil1)
+3. [Aditya Srivastava](https://github.com/adityasvat)
+4. [Soha Bhatia](https://github.com/Sohabhatia)
+5. [Akruti Sinha](https://github.com/Akruti25)
+
+
 To find out how you can contribute to this project, read the [CONTRIBUTING.md](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/main/Contributing.md) file
 
 The discord chat channel link is included in the file [CONTRIBUTING.md](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/main/Contributing.md)
