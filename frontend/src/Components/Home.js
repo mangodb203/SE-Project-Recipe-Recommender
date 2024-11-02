@@ -33,9 +33,9 @@ const Home = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "end",
-          
+
         }}
-         data-testid="main-image-container-banner"
+        data-testid="main-image-container-banner"
       >
         <div
           style={{
@@ -53,8 +53,8 @@ const Home = () => {
         </div>
         <Button className="button-style" style={{
           position: "absolute",
-          top: "50%",
-          left: "55%",
+          top: "60%",
+          left: "57%",
           transform: "translate(-50%, -50%)",
           fontSize: "20px",
           padding: "10px 20px",
@@ -69,8 +69,8 @@ const Home = () => {
         </Button>
         <Button className="button-style" style={{
           position: "absolute",
-          top: "50%",
-          left: "45%",
+          top: "60%",
+          left: "42%",
           transform: "translate(-50%, -50%)",
           fontSize: "20px",
           padding: "10px 20px",
@@ -146,7 +146,7 @@ const Home = () => {
           This project is made by Group 2
         </Typography>
         <Button
-          startIcon={<GitHubIcon/>}
+          startIcon={<GitHubIcon />}
           href="https://github.com/mangodb203/SE-Project-Recipe-Recommender"
           target="_blank"
           rel="noopener noreferrer"
