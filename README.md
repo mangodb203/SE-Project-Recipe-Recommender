@@ -48,8 +48,9 @@ This is the Home Page of the website.
 
 ## Video Demonstration
 
-[video](https://drive.google.com/file/d/1eI1Cg1RrAOP3AVBHexArJqVe3EnGjVJQ/view?usp=sharing)
+[Explanation Video - ](https://drive.google.com/file/d/1eI1Cg1RrAOP3AVBHexArJqVe3EnGjVJQ/view?usp=sharing)
 
+Animated Video
 https://github.com/user-attachments/assets/004aa3b2-0278-4c4d-a05e-303d779fe239
 
 ## Directory Structure
