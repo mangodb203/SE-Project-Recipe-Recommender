@@ -149,11 +149,9 @@ If you want to contribute and make an significant enhancement based on our proje
 
 The following are the team members who contributed and made this project.
 
-1. [Devanshi Savla](https://github.com/devanshi39)
-2. [Indranil Banerjee](https://github.com/indranil1)
-3. [Aditya Srivastava](https://github.com/adityasvat)
-4. [Soha Bhatia](https://github.com/Sohabhatia)
-5. [Akruti Sinha](https://github.com/Akruti25)
+1. [Jinish Shah](https://github.com/jinish08)
+2. [Nirmit Deliwala](https://github.com/NRDeli)
+3. [Nisarg Jasani](https://github.com/NisargJasani0602)
 
 ### Attribution
 
@@ -162,9 +160,9 @@ repository, if you have read till this point congrats you have a lot of patience
 
 ### Discord Chat Channel
 
-https://discord.gg/egAMuKQV
+https://discord.com/channels/1299144363351216310/1299144363351216313
 
-![image](https://github.com/devanshi39/SE-Project-Recipe-Recommender/blob/Indranil_Develop/docs/Discord_Chat_Channel.jpeg)
+![image](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/develop/docs/Discord-Chat-Channel.png)
 
 
 

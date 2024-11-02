@@ -19,19 +19,18 @@
 
 
 ## What is Recipe Recommendation System?
-Recipe Recommendation System helps users to select their favorite food category and recommends recipes based on it. The users are then able to view the recipe and the ingredients required, and place an order for those ingredients.
+Recipe Recommendation System helps users to enter their dietary preferences and recommends recipes based on it. The users are then able to add their favourite recipes to their profile and place orders based on it.
 
 This is the Home Page of the website.
 
-![image](https://user-images.githubusercontent.com/23338660/194782226-17e5c173-b7ac-4f2a-816a-3ca7893ccd39.png)
+![image](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/14bae9029eae116abcecb9a15440bee4b92bf60a/docs/Homepage.jpeg)
 
 ## Tools and Technology Used
 ### Tools:
-1. AWS Cloud 
-We have used Amazon EC2 instances, with its supporting VPC's to host our application on cloud. This gives almost 99.7% uptime of the application.
+1. Node.js
 2. Mongo DB Atlas
-3. Jupyter Notebook
-4. Jenkins for CI
+3. Python
+4. Jupyter Notebook
 
 ### Technology:
 1. Node.js
@@ -47,20 +46,9 @@ We have used Amazon EC2 instances, with its supporting VPC's to host our applica
 * Now, run ```npm run dev``` inside the backend folder and this will get the database and backend running
 * Lastly run ```npm start``` inside the frontend folder and the Website will running on http://localhost:3000/
 
-## Getting Started for AWS
-
-Please use the link below to access the application hosted on AWS EC2 instance
-We have done continuous integration with the help of Jenkins
-
-http://ec2-3-238-67-17.compute-1.amazonaws.com:3000/
-
 ## Video Demonstration
 
-[video](https://drive.google.com/file/d/1_feIWoAjwSuIMBCaOStx34JWHk_R2hNW/view?usp=share_link)
-
-## Project Documentation
-
-You can view the descriptive project documentation [here](https://cook-cb056.web.app)
+[video](https://drive.google.com/file/d/1eI1Cg1RrAOP3AVBHexArJqVe3EnGjVJQ/view?usp=sharing)
 
 ## Directory Structure
     │   .dvcignore
@@ -89,24 +77,21 @@ You can view the descriptive project documentation [here](https://cook-cb056.web
     ├───.github
     │   └───workflows
     │           node-app.yml
+    |           tests.yml
     │
     ├───AI
     │   │   .gitignore
     │   │   data.dvc
     │   │   INSTALL.md
+    |   |   app.py
     │   │   requirements.txt
+    |   |   test_app.py
     │   │
     │   ├───notebooks
-    │   │       collab_filtering.ipynb
-    │   │       correlation.ipynb
-    │   │       data_exploration.ipynb
-    │   │       lightfm_sample.ipynb
-    │   │       Tfid.ipynb
+    │   │       recipe_recommendation_system.ipynb
     │   │
-    │   └───src
-    │           data_loader_to_db.py
-    │           inference.py
-    │           service.py
+    │   └───data
+    │           recipe_final.csv
     │
     ├───backend
     │   │   .env.sample
@@ -114,6 +99,12 @@ You can view the descriptive project documentation [here](https://cook-cb056.web
     │   │   index.js
     │   │   package-lock.json
     │   │   package.json
+    |   |
+    |   |───_tests_
+    |   |     Food.test.js
+    |   |     User.test.js
+    |   |     bookmarkRoutes.test.js
+    |   |     recommend.test.js
     │   │
     │   ├───controllers
     │   │   │   order.js
@@ -125,6 +116,7 @@ You can view the descriptive project documentation [here](https://cook-cb056.web
     │   │           middlewares.js
     │   │
     │   ├───models
+    |   |       Food.js
     │   │       Order.js
     │   │       Recipe.js
     │   │       Recommendation.js
@@ -132,6 +124,7 @@ You can view the descriptive project documentation [here](https://cook-cb056.web
     │   │
     │   ├───routes
     │   │       auth.js
+    |   |       bookmarkRoutes.js
     │   │       order.js
     │   │       recipe.js
     │   │       recommend.js
@@ -146,10 +139,14 @@ You can view the descriptive project documentation [here](https://cook-cb056.web
     │       proj1rubricComments.pdf
     │
     └───frontend
+        |   .babelrc
+        |   babel.config.js
         │   .prettierignore
         │   .prettierrc.json
         │   package-lock.json
         │   package.json
+        |   App.test.js
+        |   setupTests.js
         │
         ├───public
         │       index.html
@@ -164,13 +161,12 @@ You can view the descriptive project documentation [here](https://cook-cb056.web
             │
             ├───Components
             │   │   AddressForm.js
+            |   |   BookmarksPage.js
             │   │   cards.css
             │   │   cards.scss
             │   │   Home.js
             │   │   Navbar.js
-            │   │   Order.js
-            │   │   PaymentForm.js
-            │   │   RecipeRecommendations.js
+            |   |   RecipeCard.js
             │   │   Recipes.js
             │   │   Review.js
             │   │   SearchBar.js
@@ -185,7 +181,6 @@ You can view the descriptive project documentation [here](https://cook-cb056.web
             │   └───LandingPage
             │           LandingPage.css
             │           LandingPage.js
-            │           LandingPage.test.js
             │
             ├───imgs
             │       breakfast.jpg
@@ -204,19 +199,17 @@ You can view the descriptive project documentation [here](https://cook-cb056.web
             │       salad.jpg
             │       soup.jpg
             │       sushi.jpg
-            │
+            │       
             └───utils
                     index.js
 
 
 ## Contributors
-1. [Devanshi Savla](https://github.com/devanshi39)
-2. [Indranil Banerjee](https://github.com/indranil1)
-3. [Aditya Srivastava](https://github.com/adityasvat)
-4. [Soha Bhatia](https://github.com/Sohabhatia)
-5. [Akruti Sinha](https://github.com/Akruti25)
+1. [Jinish Shah](https://github.com/jinish08)
+2. [Nirmit Deliwala](https://github.com/NRDeli)
+3. [Nisarg Jasani](https://github.com/NisargJasani0602)
 
-To find out how you can contribute to this project, read the [CONTRIBUTING.md](https://github.com/devanshi39/SE-Project-Recipe-Recommender/blob/Indranil_Develop/Contributing.md) file
+To find out how you can contribute to this project, read the [CONTRIBUTING.md](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/main/Contributing.md) file
 
-The discord chat channel link is included in the file [CONTRIBUTING.md](https://github.com/devanshi39/SE-Project-Recipe-Recommender/blob/Indranil_Develop/Contributing.md)
+The discord chat channel link is included in the file [CONTRIBUTING.md](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/main/Contributing.md)
 
