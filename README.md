@@ -23,7 +23,7 @@ Recipe Recommendation System helps users to enter their dietary preferences and 
 
 This is the Home Page of the website.
 
-![image](https://user-images.githubusercontent.com/23338660/194782226-17e5c173-b7ac-4f2a-816a-3ca7893ccd39.png)
+![image](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/14bae9029eae116abcecb9a15440bee4b92bf60a/docs/Homepage.jpeg)
 
 ## Tools and Technology Used
 ### Tools:
