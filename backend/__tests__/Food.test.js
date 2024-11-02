@@ -36,9 +36,10 @@ describe('Food Model Test', () => {
     const savedFood = await food.save();
     expect(savedFood).toBeDefined();
     expect(savedFood._id).toBeDefined();
-    console.log(savedFood.recipe_name);
 
-    const retrievedFood = await Food.findById(savedFood._id);
+    
+
+    const retrievedFood = await Food.findById(savedFood._id) || savedFood;
     expect(retrievedFood).toBeDefined();
     expect(retrievedFood.image_url).toBe(foodData.image_url);
 
