@@ -220,7 +220,8 @@ https://github.com/user-attachments/assets/004aa3b2-0278-4c4d-a05e-303d779fe239
 5. [Akruti Sinha](https://github.com/Akruti25)
 
 
-To find out how you can contribute to this project, read the [CONTRIBUTING.md](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/main/Contributing.md) file
+To find out how you can contribute to this project, read the [CONTRIBUTING.md](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/develop/Contributing.md) file
 
-The discord chat channel link is included in the file [CONTRIBUTING.md](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/main/Contributing.md)
+
+The discord chat channel link is included in the file [CONTRIBUTING.md](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/develop/Contributing.md)
 
