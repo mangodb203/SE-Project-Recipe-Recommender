@@ -16,6 +16,7 @@
 ![Discord](https://img.shields.io/discord/1027412417661120582)
 <!-- ![GitHub Workflow Status](https://github.com/devanshi39/SE-Project-Recipe-Recommender/actions/workflows/node-app.yml/badge.svg?branch=main) -->
 [![Tests](https://github.com/mangodb203/SE-Project-Recipe-Recommender/workflows/Tests/badge.svg)](https://github.com/mangodb203/SE-Project-Recipe-Recommender/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/github/mangodb203/SE-Project-Recipe-Recommender/branch/develop/graph/badge.svg?token=9UIXELVT3G)](https://codecov.io/github/mangodb203/SE-Project-Recipe-Recommender)
 
 
 ## What is Recipe Recommendation System?
