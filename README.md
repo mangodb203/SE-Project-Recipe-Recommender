@@ -15,7 +15,7 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/devanshi39/SE-Project-Recipe-Recommender)
 ![Discord](https://img.shields.io/discord/1027412417661120582)
 <!-- ![GitHub Workflow Status](https://github.com/devanshi39/SE-Project-Recipe-Recommender/actions/workflows/node-app.yml/badge.svg?branch=main) -->
-![Tests](https://github.com/mangodb203/SE-Project-Recipe-Recommender/workflows/Tests/badge.svg)
+[![Tests](https://github.com/mangodb203/SE-Project-Recipe-Recommender/workflows/Tests/badge.svg)](https://github.com/mangodb203/SE-Project-Recipe-Recommender/actions/workflows/tests.yml)
 
 
 ## What is Recipe Recommendation System?
@@ -48,7 +48,9 @@ This is the Home Page of the website.
 
 ## Video Demonstration
 
-[video](https://drive.google.com/file/d/1eI1Cg1RrAOP3AVBHexArJqVe3EnGjVJQ/view?usp=sharing)
+[Explanation Video ](https://drive.google.com/file/d/1eI1Cg1RrAOP3AVBHexArJqVe3EnGjVJQ/view?usp=sharing)
+
+https://github.com/user-attachments/assets/004aa3b2-0278-4c4d-a05e-303d779fe239
 
 ## Directory Structure
     │   .dvcignore
@@ -208,6 +210,14 @@ This is the Home Page of the website.
 1. [Jinish Shah](https://github.com/jinish08)
 2. [Nirmit Deliwala](https://github.com/NRDeli)
 3. [Nisarg Jasani](https://github.com/NisargJasani0602)
+
+## Previous Contributors
+1. [Devanshi Savla](https://github.com/devanshi39)
+2. [Indranil Banerjee](https://github.com/indranil1)
+3. [Aditya Srivastava](https://github.com/adityasvat)
+4. [Soha Bhatia](https://github.com/Sohabhatia)
+5. [Akruti Sinha](https://github.com/Akruti25)
+
 
 To find out how you can contribute to this project, read the [CONTRIBUTING.md](https://github.com/mangodb203/SE-Project-Recipe-Recommender/blob/main/Contributing.md) file
 
